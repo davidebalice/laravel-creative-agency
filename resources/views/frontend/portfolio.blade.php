@@ -5,8 +5,6 @@
 Portfolio
 @endsection
 
-
-<!-- breadcrumb-area -->
 <section class="breadcrumb__wrap">
     <div class="container custom-container">
         <div class="row justify-content-center">
@@ -34,9 +32,7 @@ Portfolio
         </ul>
     </div>
 </section>
-<!-- breadcrumb-area-end -->
 
-<!-- portfolio-area -->
 <section class="portfolio__inner">
     <div class="container">
         <!--
@@ -85,7 +81,6 @@ Portfolio
                             {!! Str::limit($item->description,150) !!}
                         </div>
                     </div>
-
                 </div>
             </div>
             @endforeach

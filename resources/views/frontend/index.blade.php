@@ -5,15 +5,9 @@
 Demo personal site with Portfolio and Blog developed in Laravel
 @endsection
 
-<!-- banner-area -->
-@include('frontend/home_all/home_slide')
-<!-- banner-area-end -->
+@include('frontend/home/slide')
+@include('frontend/home/about')
 
-<!-- about-area -->
-@include('frontend/home_all/home_about')
-<!-- about-area-end -->
-
-<!-- services-area -->
 <section class="services">
     <div class="container">
         <div class="services__title__wrap">
@@ -143,9 +137,7 @@ Demo personal site with Portfolio and Blog developed in Laravel
         </div>
     </div>
 </section>
-<!-- services-area-end -->
 
-<!-- work-process-area -->
 <section class="work__process">
     <div class="container">
         <div class="row justify-content-center">
@@ -212,13 +204,9 @@ Demo personal site with Portfolio and Blog developed in Laravel
         </div>
     </div>
 </section>
-<!-- work-process-area-end -->
 
-<!-- portfolio-area -->
-@include('frontend.home_all.portfolio')
-<!-- portfolio-area-end -->
+@include('frontend.home.portfolio')
 
-<!-- partner-area -->
 <section class="partner">
     <div class="container">
         <div class="row align-items-center">
@@ -316,13 +304,9 @@ Demo personal site with Portfolio and Blog developed in Laravel
         </div>
     </div>
 </section>
-<!-- testimonial-area-end -->
 
-<!-- blog-area -->
-@include('frontend.home_all.blog')
-<!-- blog-area-end -->
+@include('frontend.home.blog')
 
-<!-- contact-area -->
 <section class="homeContact">
     <div class="container">
         <div class="homeContact__wrap">
@@ -352,5 +336,4 @@ Demo personal site with Portfolio and Blog developed in Laravel
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
 @endsection

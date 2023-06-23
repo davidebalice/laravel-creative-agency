@@ -95,10 +95,7 @@ Portfolio
         </div>
     </div>
 </section>
-<!-- portfolio-details-area-end -->
 
-
-<!-- contact-area -->
 <section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
