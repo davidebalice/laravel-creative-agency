@@ -15,8 +15,8 @@
                                 <a href="index.html" class="logo__black"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
                                 <a href="index.html" class="logo__white"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
                             </div>
-                            <div class="navbar__wrap main__menu d-none d-xl-flex">
-                                <ul class="navigation">
+                            <div class="navbar__wrap main__menu d-none d-xl-flex" style="background:#fff">
+                                <ul class="navigation" style="background:#fff">
                                     
                                     <li class="{{($route=='index') ? 'active' : ''}}">
                                         <a href="{{ route('index') }}">
@@ -49,7 +49,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="header__btn d-none d-md-block">
+                            <div class="header__btn d-none d-md-block" style="background:#fff !important;padding:19px 20px 18px 0px">
                                 <a href="{{ route('contact')}}" class="btn">Contact</a>
                             </div>
                         </nav>
@@ -59,11 +59,10 @@
                         <nav class="menu__box">
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
-                                <a href="index.html" class="logo__black"><img src="{{ asset('frontend/assets/img/logo/logo_black.png')}}" alt=""></a>
-                                <a href="index.html" class="logo__white"><img src="{{ asset('frontend/assets/img/logo/logo_white.png')}}" alt=""></a>
+                                <a href="index.html" class="logo__black"><img src="{{ asset('logo/logo.png')}}" alt="" style="max-width:150px"></a>
+                                <a href="index.html" class="logo__white"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
                             </div>
                             <div class="menu__outer">
-                                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                             </div>
                             <div class="social-links">
                                 <ul class="clearfix">
