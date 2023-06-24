@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function Blog(){
         $blogs = Blog::latest()->with('categories')->paginate(12);
-        return view('admin.blog.all',compact('blogs'));
+        return view('admin.blog.blog',compact('blogs'));
     }
     
     public function AddBlog(){

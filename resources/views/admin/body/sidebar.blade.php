@@ -1,11 +1,6 @@
-  <!-- ========== Left Sidebar Start ========== -->
-  <div class="vertical-menu">
-
+<div class="vertical-menu">
     <div data-simplebar class="h-100">
 
-      
-
-        <!--- Sidemenu -->
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
@@ -18,14 +13,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <!--
-                <li>
-                    <a href="calendar.html" class=" waves-effect">
-                        <i class="ri-calendar-2-line"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                -->
+               
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
@@ -35,7 +23,6 @@
                         <li><a href="{{ route ('home.slide') }}">Options</a></li>
                     </ul>
                 </li>
-
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -59,10 +46,23 @@
                         <span>Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('all.portfolio') }}">Portfolio</a></li>
+                        <li><a href="{{ route ('admin.portfolio') }}">Portfolio</a></li>
                     </ul>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('add.portfolio') }}">Add portfolio</a></li>
+                        <li><a href="{{ route ('portfolio.add') }}">Add portfolio</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Services</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route ('admin.services') }}">Services</a></li>
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route ('services.add') }}">Add service</a></li>
                     </ul>
                 </li>
                 
@@ -75,7 +75,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('blog.category') }}">Category</a></li>
-                        <li><a href="{{ route('add.blog.category') }}">Add category</a></li>
+                        <li><a href="{{ route('blog.category.add') }}">Add category</a></li>
                     </ul>
                 </li>
 
@@ -85,8 +85,8 @@
                         <span>Blog</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li><a href="{{ route('add.blog') }}">Add Blog</a></li>
+                        <li><a href="{{ route('admin.blog') }}">Blog</a></li>
+                        <li><a href="{{ route('blog.add') }}">Add Blog</a></li>
                     </ul>
                 </li>
 

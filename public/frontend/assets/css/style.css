@@ -1892,6 +1892,7 @@ label {
     font-size: 30px;
     cursor: pointer;
     line-height: 1;
+    background-color: #fff;
     color: #191b1e;
     display: none;
     margin-top: 6px;
@@ -1997,12 +1998,11 @@ label {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 20px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 7px 14px 7px;
-    border-color: transparent transparent #fcaf17 transparent;
+    bottom: 24px;
+    width: 26px;
+    height: 3px;
+    color:  #fcaf17;
+    background:  #fcaf17;
     margin: 0 auto;
     opacity: 0;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -2087,9 +2087,6 @@ label {
     display: none;
 }
 
-/*=============================
-03. Mobile Menu
-=============================*/
 .mobile__menu {
     position: fixed;
     right: 0;
@@ -6780,3 +6777,28 @@ body.active-dark-mode p {
 .active-dark-mode .copyright__text p {
     color: #9099ab;
 }
+.mainMenuBg {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.mainMenuBgDx {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 19px 20px 18px 0px;
+}
+@media (max-width: 1199px) {
+    .mainMenuBgDx {
+        background-color: none;
+        padding: 0px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .logo__black {
+        display: none;
+    }
+    .logo__white {
+        display: inline-block !important;
+    }
+  }
+
+

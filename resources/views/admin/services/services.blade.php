@@ -9,15 +9,13 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Blog</h4>
+                    <h4 class="mb-sm-0">Services</h4>
                 </div>
             </div>
         </div>
-        <!-- end page title -->
         
         <div class="row">
             <div class="col-12">
@@ -31,11 +29,10 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Data</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Id</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Category</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>                                            
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Tags</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Portfolio name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
                                         </thead>
 
@@ -44,7 +41,7 @@
                                             $i=1;
                                             $class_row="even";
                                         @endphp
-                                        @foreach ($blogs as $item) 
+                                        @foreach ($services as $item) 
                                             @php
                                                 $i++
                                             @endphp
@@ -58,34 +55,15 @@
                                                 @endphp
                                             @endif
                                             <tr class="{{ $class_row }}">
-                                                <td class="sorting_1 dtr-control">{{ $item->date }}</td>
+                                                <td class="sorting_1 dtr-control">{{ $item->id }}</td>
                                                 <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
-                                              
-                                               
-                                                
-                                                
-                                                <td>{{$item-> categories->category  ?? 'None'}}
-
-                                                @php
-                                                    /*
-                                                    $leagues = DB::table('blog_categories')->select('*')->where('id', $item->category_id)->first();                                              
-                                                    echo $leagues->category  ?? 'None';
-                                                    */
-                                                @endphp 
-
-                                                <br />
-                                                  
-                                              
-                                                
-                                                
-                                                </td>
+                                                <td>{{ $item->name }}</td>
                                                 <td>{{ $item->title }}</td>
-                                                <td>{{ $item->tags }}</td>
                                                 <td>
-                                                    <a href="{{ route('edit.blog',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('services.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="{{ route('delete.blog',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
+                                                    <a href="{{ route('services.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
@@ -96,16 +74,22 @@
                                 </div>
                         </div>
                         <div class="row">
-                            {{ $blogs->links() }}
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="datatable_info" role="status" ariaf-live="polite">
+                                        
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+                                    
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-            </div> <!-- end col -->
-        </div> <!-- end row -->
-
-    </div> <!-- container-fluid -->
+            </div>
+        </div>
+    </div>
 </div>
-
 
 @endsection

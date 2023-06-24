@@ -10,9 +10,9 @@ use Carbon\Carbon;
 
 class PortfolioController extends Controller
 { 
-    public function AllPortfolio(){
+    public function AdminPortfolio(){
         $portfolio = Portfolio::latest()->get();
-        return view('admin.portfolio.all',compact('portfolio'));
+        return view('admin.portfolio.portfolio',compact('portfolio'));
     }
     
     public function AddPortfolio(){
@@ -62,7 +62,7 @@ class PortfolioController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('all.portfolio')->with($notification);
+        return redirect()->route('portfolio')->with($notification);
     }
 
     public function EditPortfolio($id){
@@ -134,7 +134,7 @@ class PortfolioController extends Controller
             'alert-type' => 'error'
         );
         session()->flash('message','Portfolio deleted');
-        return redirect()->route('all.portfolio')->with($notification);
+        return redirect()->route('portfolio')->with($notification);
     }
 
     public function PortfolioDetails ($id){

@@ -1,6 +1,5 @@
 @php
     $route = Route::current()->getName();
-
 @endphp
 
 <header>
@@ -12,11 +11,11 @@
                     <div class="menu__wrap">
                         <nav class="menu__nav">
                             <div class="logo">
-                                <a href="index.html" class="logo__black"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
-                                <a href="index.html" class="logo__white"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
+                                <a href="{{ route('index') }}" class="logo__black"><img src="{{ asset('logo/logo.png')}}" alt="" style="width:90%"></a>
+                                <a href="{{ route('index') }}" class="logo__white"><img src="{{ asset('logo/logo_white.png')}}" alt="" style="width:90%"></a>
                             </div>
-                            <div class="navbar__wrap main__menu d-none d-xl-flex" style="background:#fff">
-                                <ul class="navigation" style="background:#fff">
+                            <div class="navbar__wrap main__menu d-none d-xl-flex mainMenuBg">
+                                <ul class="navigation">
                                     
                                     <li class="{{($route=='index') ? 'active' : ''}}">
                                         <a href="{{ route('index') }}">
@@ -36,8 +35,8 @@
                                         </a>                                    
                                     </li>
 
-                                    <li class="{{($route=='home.blog') ? 'active' : ''}}">
-                                        <a href="{{ route('home.blog')}}">
+                                    <li class="{{($route=='blog') ? 'active' : ''}}">
+                                        <a href="{{ route('blog')}}">
                                             Blog
                                         </a>    
                                     </li>
@@ -49,7 +48,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="header__btn d-none d-md-block" style="background:#fff !important;padding:19px 20px 18px 0px">
+                            <div class="header__btn d-none d-md-block mainMenuBgDx">
                                 <a href="{{ route('contact')}}" class="btn">Contact</a>
                             </div>
                         </nav>
@@ -59,8 +58,7 @@
                         <nav class="menu__box">
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
-                                <a href="index.html" class="logo__black"><img src="{{ asset('logo/logo.png')}}" alt="" style="max-width:150px"></a>
-                                <a href="index.html" class="logo__white"><img src="{{ asset('logo/logo.png')}}" alt=""></a>
+                                <a href="{{ route('index') }}"><img src="{{ asset('logo/logo.png')}}" alt="" style="max-width:150px"></a>
                             </div>
                             <div class="menu__outer">
                             </div>

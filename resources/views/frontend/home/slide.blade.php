@@ -22,7 +22,7 @@
                     <p class="wow fadeInUp" data-wow-delay=".4s">
                         {{ $homeslide->short_title }}
                     </p>
-                    <a href="about.html" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about me</a>
+                    <a href="about.html" class="btn banner__btn wow fadeInUp mb-5" data-wow-delay=".6s">more about me</a>
                 </div>
             </div>
         </div>

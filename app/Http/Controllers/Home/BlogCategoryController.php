@@ -8,7 +8,6 @@ use App\Models\BlogCategory;
 use Intervention\Image\Facades\Image As Image;
 use Carbon\Carbon;
 
-
 class BlogCategoryController extends Controller
 {
     public function BlogCategory(){

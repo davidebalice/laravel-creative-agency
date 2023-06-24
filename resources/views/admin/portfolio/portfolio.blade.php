@@ -9,7 +9,6 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -17,7 +16,6 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
         
         <div class="row">
             <div class="col-12">
@@ -62,10 +60,10 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>
-                                                    <a href="{{ route('edit.portfolio',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('portfolio.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="{{ route('delete.portfolio',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
+                                                    <a href="{{ route('delete.portfolio.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
@@ -86,16 +84,12 @@
                                     
                                 </div>
                             </div>
-                        
                         </div>
-
                     </div>
                 </div>
-            </div> <!-- end col -->
-        </div> <!-- end row -->
-
-    </div> <!-- container-fluid -->
+            </div>
+        </div>
+    </div>
 </div>
-
 
 @endsection

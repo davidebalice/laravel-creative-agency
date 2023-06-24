@@ -6,6 +6,7 @@ use App\Http\Controllers\Home\HomepageController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\ServiceController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
@@ -52,35 +53,45 @@ Route::controller(AboutController::class)->group(function(){
 });
 
 Route::controller(PortfolioController::class)->group(function(){
-    Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
-    Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
-    Route::post('/store/portfolio', 'StorePortfolio')->name('store.portfolio');
-    Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
-    Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
-    Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
+    Route::get('/admin/portfolio', 'AdminPortfolio')->name('admin.portfolio');
+    Route::get('/portfolio/add', 'AddPortfolio')->name('portfolio.add');
+    Route::post('/portfolio/store', 'StorePortfolio')->name('portfolio.store');
+    Route::get('/portfolio/edit/{id}', 'EditPortfolio')->name('portfolio.edit');
+    Route::get('/portfolio/delete/{id}', 'DeletePortfolio')->name('portfolio.delete');
+    Route::post('/portfolio/update', 'UpdatePortfolio')->name('portfolio.update');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
     Route::get('/portfolio', 'Portfolio')->name('portfolio');
 });
 
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('/admin/services', 'AdminServices')->name('admin.services');
+    Route::get('/services/add', 'AddService')->name('services.add');
+    Route::post('/services/store', 'StorePortfolio')->name('services.store');
+    Route::get('/services/edit/{id}', 'EditPortfolio')->name('services.edit');
+    Route::get('/services/delete/{id}', 'DeletePortfolio')->name('services.delete');
+    Route::post('/services/update', 'UpdatePortfolio')->name('services.update');
+    Route::get('/services/details/{id}', 'PortfolioDetails')->name('services.details');
+});
+
 Route::controller(BlogCategoryController::class)->group(function(){
     Route::get('/blog/category', 'BlogCategory')->name('blog.category');
-    Route::get('/add/blog/category', 'AddBlogCategory')->name('add.blog.category');
-    Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
-    Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('edit.blog.category');
-    Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('delete.blog.category');
-    Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('update.blog.category');
+    Route::get('/add/blog/category', 'AddBlogCategory')->name('blog.category.add');
+    Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category.store');
+    Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('blog.category.edit');
+    Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('blog.category.delete');
+    Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('blog.category.update');
 });
 
 Route::controller(BlogController::class)->group(function(){
-    Route::get('/admin/blog', 'Blog')->name('blog');
-    Route::get('/add/blog', 'AddBlog')->name('add.blog');
-    Route::post('/store/blog', 'StoreBlog')->name('store.blog');
-    Route::get('/edit/blog/{id}', 'EditBlog')->name('edit.blog');
-    Route::get('/delete/blog/{id}', 'DeleteBlog')->name('delete.blog');
-    Route::post('/update/blog/', 'UpdateBlog')->name('update.blog');
+    Route::get('/admin/blog', 'Blog')->name('admin.blog');
+    Route::get('/blog/add', 'AddBlog')->name('blog.add');
+    Route::post('/blog/store', 'StoreBlog')->name('blog.store');
+    Route::get('/blog/edit/{id}', 'EditBlog')->name('blog.edit');
+    Route::get('/blog/delete/{id}', 'DeleteBlog')->name('blog.delete');
+    Route::post('/blog/update/', 'UpdateBlog')->name('blog.update');
     Route::get('/blog/details/{id}', 'BlogDetails')->name('blog.details');
-    Route::get('/category/blog/{id}', 'CategoryBlog')->name('category.post');
-    Route::get('/blog', 'HomeBlog')->name('home.blog');
+    Route::get('/blog/category/{id}', 'CategoryBlog')->name('category.post');
+    Route::get('/blog', 'HomeBlog')->name('blog');
 });
 
 Route::controller(FooterController::class)->group(function(){

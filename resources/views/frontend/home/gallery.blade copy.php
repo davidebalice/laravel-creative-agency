@@ -1,6 +1,5 @@
 @php
-    $about = App\Models\About::find(1);
-    $homeslide = App\Models\HomeSlide::find(1);
+    $allMultiImage = App\Models\MultiImage::all();
 @endphp
 
 <section id="aboutSection" class="about">
@@ -41,5 +40,15 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section id="gallerySection">
+    <div class="row align-items-center">
+        @foreach ($allMultiImage as $item)
+            <div class="col-lg-3">
+                <img class="light" src="{{ asset($item->multi_image)}}">
+            </div>
+        @endforeach  
     </div>
 </section>
