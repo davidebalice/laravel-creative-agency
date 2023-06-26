@@ -26,7 +26,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-account-box-fill"></i>
                         <span>About</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -42,7 +42,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="mdi mdi-inbox-multiple"></i>
                         <span>Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -55,7 +55,7 @@
                 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-lightbulb-flash-line"></i>
                         <span>Services</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -70,7 +70,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-align-justify"></i>
+                        <i class="ri-menu-fill"></i>
                         <span>Blog category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -93,7 +93,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-profile-line"></i>
+                        <i class="mdi mdi-dock-bottom"></i>
                         <span>Footer</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -103,7 +103,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-profile-line"></i>
+                        <i class="ri-contacts-book-2-line"></i>
                         <span>Contact</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">

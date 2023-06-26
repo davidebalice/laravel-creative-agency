@@ -3948,3 +3948,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   height:2.4rem;
   border:2px solid #888
 }
+
+.addButton {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  width: fit-content;
+}

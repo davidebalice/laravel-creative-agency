@@ -5,20 +5,25 @@
 <div class="page-content">
     <div class="container-fluid">
 
-       
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('admin.portfolio') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Back
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title mb-5">Update portfolio</h4>
-                        
-                        <!--
-                        <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
-                        -->
-                        
-                        <form id="frm_portfolio" method="post" action="{{ route('update.portfolio')}}" enctype="multipart/form-data">
+                        <form id="frm_portfolio" method="post" action="{{ route('portfolio.update')}}" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden" name="id" value="{{ $portfolio->id }}">

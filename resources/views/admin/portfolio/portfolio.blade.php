@@ -16,6 +16,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('portfolio.add') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="ri-add-circle-fill" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Add work on portfolio
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-12">
@@ -63,7 +76,7 @@
                                                     <a href="{{ route('portfolio.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="{{ route('delete.portfolio.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
+                                                    <a href="{{ route('portfolio.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>

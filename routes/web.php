@@ -66,11 +66,11 @@ Route::controller(PortfolioController::class)->group(function(){
 Route::controller(ServiceController::class)->group(function(){
     Route::get('/admin/services', 'AdminServices')->name('admin.services');
     Route::get('/services/add', 'AddService')->name('services.add');
-    Route::post('/services/store', 'StorePortfolio')->name('services.store');
-    Route::get('/services/edit/{id}', 'EditPortfolio')->name('services.edit');
-    Route::get('/services/delete/{id}', 'DeletePortfolio')->name('services.delete');
-    Route::post('/services/update', 'UpdatePortfolio')->name('services.update');
-    Route::get('/services/details/{id}', 'PortfolioDetails')->name('services.details');
+    Route::post('/services/store', 'StoreService')->name('services.store');
+    Route::get('/services/edit/{id}', 'EditService')->name('services.edit');
+    Route::get('/services/delete/{id}', 'DeleteService')->name('services.delete');
+    Route::post('/services/update', 'UpdateService')->name('services.update');
+    Route::get('/services/details/{id}', 'ServiceDetails')->name('services.details');
 });
 
 Route::controller(BlogCategoryController::class)->group(function(){

@@ -2001,8 +2001,8 @@ label {
     bottom: 24px;
     width: 26px;
     height: 3px;
-    color:  #fcaf17;
-    background:  #fcaf17;
+    color: #fcaf17;
+    background: #fcaf17;
     margin: 0 auto;
     opacity: 0;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -6791,7 +6791,6 @@ body.active-dark-mode p {
     }
 }
 
-
 @media (max-width: 991px) {
     .logo__black {
         display: none;
@@ -6799,6 +6798,4 @@ body.active-dark-mode p {
     .logo__white {
         display: inline-block !important;
     }
-  }
-
-
+}

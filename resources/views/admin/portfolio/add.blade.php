@@ -13,12 +13,7 @@
 
                         <h4 class="card-title mb-5">Add portfolio</h4>
                         
-                        <!--
-                        <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
-                        -->
-                        
-                        <form id="frm_portfolio" method="post" action="{{ route('store.portfolio')}}" enctype="multipart/form-data">
+                        <form id="frm_portfolio" method="post" action="{{ route('portfolio.store')}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">

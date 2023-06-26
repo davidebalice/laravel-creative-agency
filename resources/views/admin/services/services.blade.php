@@ -16,6 +16,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('services.add') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="ri-add-circle-fill" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Add service
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-12">
@@ -30,9 +43,9 @@
                                         <thead>
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Id</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-label="Position: activate to sort column ascending">Icon</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Portfolio name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 500px;" aria-label="Position: activate to sort column ascending">Service</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
                                         </thead>
 
@@ -56,8 +69,8 @@
                                             @endif
                                             <tr class="{{ $class_row }}">
                                                 <td class="sorting_1 dtr-control">{{ $item->id }}</td>
-                                                <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
-                                                <td>{{ $item->name }}</td>
+                                                <td><img src="{{ asset($item->icon) }}" style="width:80px;height:auto;border:1px solid #ccc"></td>
+                                                <td><img src="{{ asset($item->photo) }}" style="width:150px;height:auto;border:1px solid #ccc"></td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>
                                                     <a href="{{ route('services.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
