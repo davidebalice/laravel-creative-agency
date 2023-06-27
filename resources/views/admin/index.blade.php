@@ -4,7 +4,6 @@
 <div class="page-content">
     <div class="container-fluid">
         
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -20,7 +19,6 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
 
         <div class="row">
             <div class="col-xl-3 col-md-6">
@@ -38,9 +36,10 @@
                                 </span>
                             </div>
                         </div>                                            
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
+                    </div>
+                </div>
+            </div>
+
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -56,9 +55,10 @@
                                 </span>
                             </div>
                         </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
+                    </div>
+                </div>
+            </div>
+
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -74,9 +74,10 @@
                                 </span>
                             </div>
                         </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
+                    </div>
+                </div>
+            </div>
+
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -92,12 +93,10 @@
                                 </span>
                             </div>
                         </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-        </div><!-- end row -->
-
-        
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-xl-12">
@@ -108,13 +107,9 @@
                                 <i class="mdi mdi-dots-vertical"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">Action</a>
                             </div>
                         </div>
@@ -238,19 +233,13 @@
                                         </td>
                                         <td>$55,100</td>
                                     </tr>
-                                     <!-- end -->
-                                </tbody><!-- end tbody -->
-                            </table> <!-- end table -->
+                                </tbody>
+                            </table> 
                         </div>
-                    </div><!-- end card -->
-                </div><!-- end card -->
+                    </div>
+                </div>
             </div>
-            <!-- end col -->
-            
-            
-            
         </div>
-        <!-- end row -->
     </div>
 </div>
 @endsection

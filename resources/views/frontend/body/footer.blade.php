@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>{{ $footer->copyright }}</p>
+                        <p>{{ $footer->copyright }} <script>document.write(new Date().getFullYear());</script></p> 
                     </div>
                 </div>
             </div>

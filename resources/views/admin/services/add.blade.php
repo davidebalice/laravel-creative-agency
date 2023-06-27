@@ -5,6 +5,19 @@
 <div class="page-content">
     <div class="container-fluid">
 
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('admin.services') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Back
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+
        
         <div class="row">
             <div class="col-12">

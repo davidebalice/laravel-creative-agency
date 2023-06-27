@@ -3,7 +3,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
                 <div class="section__title text-center">
-                    <h2 class="title">All creative work</h2>
+                    <h2 class="title">
+                        Portfolio
+                    </h2>
                 </div>
             </div>
         </div>

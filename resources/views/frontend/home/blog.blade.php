@@ -4,8 +4,16 @@
 
 <section class="blog">
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8">
+                <div class="section__title text-center mb-5">
+                    <h2 class="title">
+                        Blog
+                    </h2>
+                </div>
+            </div>
+        </div>
         <div class="row gx-0 justify-content-center">
-           
            @foreach ($blogs as $item)
             <div class="col-lg-4 col-md-6 col-sm-9">
                 <div class="blog__post__item">

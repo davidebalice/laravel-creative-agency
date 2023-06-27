@@ -8,20 +8,13 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <ul class="about__icons__wrap">
-                    @php
-                        /*
-                         <div class="banner__img text-center text-xxl-end">
-                            <img src="{{ asset('temp.png')}}" alt="">
-                        </div>
-                        */
-                    @endphp
+                   
                 </ul>
             </div>
             <div class="col-lg-6">
                 <div class="about__content">
-                  
                     <div class="section__title">
-                        <h2 class="title">
+                        <h2 class="title mobileWhite">
                             {{ $about->title }}
                         </h2>
                     </div>
@@ -29,11 +22,11 @@
                         <div class="about__exp__icon">
                             <img src="{{ asset('frontend/assets/img/icons/about_icon.png')}}" alt="">
                         </div>
-                        <div class="about__exp__content">
-                            <p> {{ $about->short_title }}</p>
+                        <div class="about__exp__content mobileWhite">
+                            <p class="mobileWhite"> {{ $about->short_title }}</p>
                         </div>
                     </div>
-                    <p class="desc mb-2">{!! $about->short_description !!}</p>
+                    <p class="desc mb-2 mobileWhite">{!! $about->short_description !!}</p>
                    
                     <div class="banner__video mt-3">
                         <a href="{{ $homeslide->video_url }}" class="popup-video"><i class="fas fa-play"></i></a>
