@@ -9,7 +9,6 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -17,7 +16,19 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('blog.category.add') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="ri-add-circle-fill" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Add category
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-12">
@@ -60,10 +71,10 @@
                                                 <td>{{ $item->category }}</td>
                                                 <td>{{ $item->order }}</td>
                                                 <td>
-                                                    <a href="{{ route('edit.blog.category',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('blog.category.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="{{ route('delete.blog.category',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
+                                                    <a href="{{ route('blog.category.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>

@@ -12,7 +12,7 @@ class BlogCategoryController extends Controller
 {
     public function BlogCategory(){
         $blogcategory = BlogCategory::latest()->get();
-        return view('admin.blog_category.all',compact('blogcategory'));
+        return view('admin.blog_category.category',compact('blogcategory'));
     }
 
     public function AddBlogCategory(){
@@ -40,7 +40,7 @@ class BlogCategoryController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('blog.category')->with($notification);
+        return redirect()->route('admin.blog.category')->with($notification);
     }
 
 
@@ -82,6 +82,6 @@ class BlogCategoryController extends Controller
             'alert-type' => 'error'
         );
         session()->flash('message','Blog category deleted');
-        return redirect()->route('blog.category')->with($notification);
+        return redirect()->route('admin.blog.category')->with($notification);
     }
 }

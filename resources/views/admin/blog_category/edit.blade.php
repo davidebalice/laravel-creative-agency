@@ -5,17 +5,29 @@
 <div class="page-content">
     <div class="container-fluid">
 
+        <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('admin.blog.category') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Back
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
        
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Add blog category</h4>
+                        <h4 class="card-title mb-5">Edit category</h4>
 
                         <input type="hidden" name="id" value="{{ $blogcategory->id }}">
                         
-                        <form id="frm_blog_category" method="post" action="{{ route('update.blog.category',$blogcategory->id)}}" enctype="multipart/form-data">
+                        <form id="frm_blog_category" method="post" action="{{ route('blog.category.update',$blogcategory->id)}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">
@@ -50,28 +62,9 @@
                             </a>
                         </form>
 
-                        
-                        <!--
-
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Select</label>
-                            <div class="col-sm-10">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected="">Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    </select>
-                            </div>
-                        </div>
-                       
-                        -->
-
-
-
                     </div>
                 </div>
-            </div> <!-- end col -->
+            </div> 
         </div>
     </div>
 </div>

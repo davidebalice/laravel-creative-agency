@@ -2,14 +2,12 @@
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
 <style>
 .even{background: #f9f9f9}
 </style>
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -17,8 +15,34 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
-        
+
+        <div class="row mb-3">
+            <div class="col-auto">
+                <a href="{{ route('blog.add') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="ri-add-circle-fill" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Add article
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <div class="col-auto">
+                <form>
+                    <div class="input-group">
+                        <div class="searchContainer">
+                            <div class="form-outline">
+                                <input type="search" id="form1" class="form-control" name="q" />
+                            </div>
+                            <button type="submit" class="btn btn-primary ml-3">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+            
         <div class="row">
             <div class="col-12">
                 <div class="card">

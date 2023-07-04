@@ -3855,7 +3855,64 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     display: flex !important;
     flex-direction: row !important;
     width: fit-content;
-    line-height: 30px !important;
+    line-height: 26px !important;
+    padding-bottom:5px;
+    padding-top:5px;
 }
-
-/*# sourceMappingURL=app.min.css.map */
+.addButton2 {
+    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    width: fit-content;
+    line-height: 30px !important;
+    float: right !important;
+    padding: 4px 10px 4px 10px;
+}
+.laravelLogo {
+    max-width: 140px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.dashCard {
+    min-height: 300px;
+}
+.dashCardBg {
+    background-image: url("../images/bg_dash.jpg");
+    background-size: cover;
+}
+.dashTitle {
+    float: left;
+    width: fit-content;
+}
+.dashTitle2 {
+    padding-top: 12px;
+}
+.dashBox {
+    width: 100%;
+    clear: both;
+    justify-content: space-between;
+}
+.dbLogo {
+    max-width: 140px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.dashText1 {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 22px;
+}
+.dashText2 {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 10px;
+}
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    gap: 10px;
+}

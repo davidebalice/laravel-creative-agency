@@ -21,18 +21,28 @@
     <div class="container-fluid">
 
         <div class="row">
+            <div class="col-12 mb-4">
+                <a href="{{ route('admin.blog') }}">
+                    <button class="btn btn-success addButton">
+                        <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
+                        <div>
+                            &nbsp;&nbsp;Back
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Add blog</h4>
+                        <h4 class="card-title mb-5">Add article</h4>
                         
-                        <!--
-                        <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
-                        -->
+                      
                         
-                        <form id="frm_blog" method="post" action="{{ route('update.blog')}}" enctype="multipart/form-data">
+                        <form id="frm_blog" method="post" action="{{ route('blog.update')}}" enctype="multipart/form-data">
                             @csrf
                                 
                             <input type="hidden" name="id" value="{{ $blogs->id }}">

@@ -49,7 +49,7 @@
                         <li><a href="{{ route ('admin.portfolio') }}">Portfolio</a></li>
                     </ul>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('portfolio.add') }}">Add portfolio</a></li>
+                        <li><a href="{{ route ('portfolio.add') }}">Add work</a></li>
                     </ul>
                 </li>
                 
@@ -74,7 +74,7 @@
                         <span>Blog category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('blog.category') }}">Category</a></li>
+                        <li><a href="{{ route('admin.blog.category') }}">Category</a></li>
                         <li><a href="{{ route('blog.category.add') }}">Add category</a></li>
                     </ul>
                 </li>
@@ -86,10 +86,9 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.blog') }}">Blog</a></li>
-                        <li><a href="{{ route('blog.add') }}">Add Blog</a></li>
+                        <li><a href="{{ route('blog.add') }}">Add article</a></li>
                     </ul>
                 </li>
-
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

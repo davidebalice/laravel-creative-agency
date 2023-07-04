@@ -17,16 +17,30 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 mb-4">
+        <div class="row mb-3">
+            <div class="col-auto">
                 <a href="{{ route('portfolio.add') }}">
                     <button class="btn btn-success addButton">
                         <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Add work on portfolio
+                            &nbsp;&nbsp;Add work
                         </div>
                     </button>
                 </a>
+            </div>
+            <div class="col-auto">
+                <form>
+                    <div class="input-group">
+                        <div class="searchContainer">
+                            <div class="form-outline">
+                                <input type="search" id="form1" class="form-control" name="q" />
+                            </div>
+                            <button type="submit" class="btn btn-primary ml-3">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         

@@ -10,14 +10,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title mb-5">Home slide</h4>
-                        
-                        <!--
-                        <p class="card-title-desc">Here are examples of <code class="highlighter-rouge">.form-control</code> applied to each
-                            textual HTML5 <code class="highlighter-rouge">&lt;input&gt;</code> <code class="highlighter-rouge">type</code>.</p>
-                        -->
-                        
+                       
                         <form id="frm_profile" method="post" action="{{ route('update.slider')}}" enctype="multipart/form-data">
                             @csrf
 

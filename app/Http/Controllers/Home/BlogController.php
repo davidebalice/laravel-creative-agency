@@ -11,10 +11,20 @@ use Carbon\Carbon;
 
 class BlogController extends Controller
 {
-    public function Blog(){
-        $blogs = Blog::latest()->with('categories')->paginate(12);
-        return view('admin.blog.blog',compact('blogs'));
+    public function Blog(Request $request)
+    {
+        $searchTerm = $request->input('q');
+        $query = Blog::latest()->with('categories');
+        if ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('title', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('description', 'like', '%' . $searchTerm . '%');
+            });
+        }
+        $blogs = $query->paginate(12);
+        return view('admin.blog.blog', compact('blogs'));
     }
+
     
     public function AddBlog(){
         $categories = BlogCategory::orderBy('order','ASC')->get();
@@ -74,7 +84,7 @@ class BlogController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('blog')->with($notification);
+        return redirect()->route('admin.blog')->with($notification);
     }
 
     public function EditBlog($id){
@@ -152,7 +162,7 @@ class BlogController extends Controller
             'alert-type' => 'error'
         );
         session()->flash('message','blog deleted');
-        return redirect()->route('blog')->with($notification);
+        return redirect()->route('admin.blog')->with($notification);
     }
 
     public function BlogDetails ($id){

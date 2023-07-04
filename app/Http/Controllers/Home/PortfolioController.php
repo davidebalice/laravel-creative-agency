@@ -10,11 +10,19 @@ use Carbon\Carbon;
 
 class PortfolioController extends Controller
 { 
-    public function AdminPortfolio(){
-        $portfolio = Portfolio::latest()->get();
+    public function AdminPortfolio(Request $request){
+        $searchTerm = $request->input('q');
+        $query = Portfolio::latest();
+        if ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('title', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('description', 'like', '%' . $searchTerm . '%');
+            });
+        }
+        $portfolio = $query->paginate(12);
         return view('admin.portfolio.portfolio',compact('portfolio'));
     }
-    
+
     public function AddPortfolio(){
         return view('admin.portfolio.add');
     }
@@ -62,7 +70,7 @@ class PortfolioController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('portfolio')->with($notification);
+        return redirect()->route('admin.portfolio')->with($notification);
     }
 
     public function EditPortfolio($id){
@@ -134,7 +142,7 @@ class PortfolioController extends Controller
             'alert-type' => 'error'
         );
         session()->flash('message','Portfolio deleted');
-        return redirect()->route('portfolio')->with($notification);
+        return redirect()->route('admin.portfolio')->with($notification);
     }
 
     public function PortfolioDetails ($id){

@@ -13,8 +13,7 @@
 
                         <h4 class="card-title mb-5">Add blog category</h4>
                      
-                        
-                        <form id="frm_category" method="post" action="{{ route('store.blog.category')}}" enctype="multipart/form-data">
+                        <form id="frm_category" method="post" action="{{ route('blog.category.store')}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row mb-3">

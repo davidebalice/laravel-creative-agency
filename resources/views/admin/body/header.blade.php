@@ -1,7 +1,6 @@
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
-            <!-- LOGO -->
             <div class="navbar-brand-box">
                 <a href="/dashboard" class="logo logo-dark">
                     <span class="logo-sm">
@@ -11,7 +10,6 @@
                         <img src="{{ asset('logo/logo-light.png') }}" alt="logo-dark" height="40">
                     </span>
                 </a>
-
                 <a href="/dashboard" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('logo/logo-light.png') }}" alt="logo-sm" height="20">
@@ -26,19 +24,20 @@
                 <i class="ri-menu-2-line align-middle"></i>
             </button>
 
-            <!-- App Search-->
+            <!-- 
             <form class="app-search d-none d-lg-block">
                 <div class="position-relative">
                     <input type="text" class="form-control" placeholder="Search...">
                     <span class="ri-search-line"></span>
                 </div>
             </form>
-
-            @include('admin.body.nav')
+            -->
+            @php
+                //@include('admin.body.nav')
+            @endphp
         </div>
 
         <div class="d-flex">
-
             <div class="dropdown d-inline-block d-lg-none ms-2">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,22 +66,18 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
         
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                     </a>
 
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                     </a>
 
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                     </a>
 
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <img src="{{ asset('backend/assets/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                     </a>

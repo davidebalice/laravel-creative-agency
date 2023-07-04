@@ -74,9 +74,9 @@ Route::controller(ServiceController::class)->group(function(){
 });
 
 Route::controller(BlogCategoryController::class)->group(function(){
-    Route::get('/blog/category', 'BlogCategory')->name('blog.category');
+    Route::get('/admin/blog/category', 'BlogCategory')->name('admin.blog.category');
     Route::get('/add/blog/category', 'AddBlogCategory')->name('blog.category.add');
-    Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category.store');
+    Route::post('/store/blog/category', 'StoreBlogCategory')->name('blog.category.store');
     Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('blog.category.edit');
     Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('blog.category.delete');
     Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('blog.category.update');
@@ -84,6 +84,7 @@ Route::controller(BlogCategoryController::class)->group(function(){
 
 Route::controller(BlogController::class)->group(function(){
     Route::get('/admin/blog', 'Blog')->name('admin.blog');
+    Route::get('/admin/blog/search', 'BlogSearch')->name('admin.blog.search');
     Route::get('/blog/add', 'AddBlog')->name('blog.add');
     Route::post('/blog/store', 'StoreBlog')->name('blog.store');
     Route::get('/blog/edit/{id}', 'EditBlog')->name('blog.edit');

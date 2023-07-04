@@ -9,8 +9,16 @@ use Carbon\Carbon;
 
 class ServiceController extends Controller
 {
-    public function AdminServices(){
-        $services = Service::latest()->get();
+    public function AdminServices(Request $request){
+        $searchTerm = $request->input('q');
+        $query = Service::latest();
+        if ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('title', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('description', 'like', '%' . $searchTerm . '%');
+            });
+        }
+        $services = $query->paginate(12);
         return view('admin.services.services',compact('services'));
     }
     
