@@ -75,6 +75,18 @@ class BlogCategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function ActiveBlogCategory(Request $request, $id){
+        try {
+            $blogCategory = BlogCategory::findOrFail($id);
+            $blogCategory->update([
+                'active' => $request->active,
+            ]);
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        }
+    }
+
     public function DeleteBlogCategory ($id){
         BlogCategory::findOrFail($id)->delete();
         $notification = array(

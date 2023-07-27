@@ -118,6 +118,18 @@ class ServiceController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function ActiveService(Request $request, $id){
+        try {
+            $services = Service::findOrFail($id);
+            $services->update([
+                'active' => $request->active,
+            ]);
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        }
+    }
+
     public function DeleteService ($id){
         $services = Service::findOrFail($id);
         $img = $services->photo;
@@ -143,7 +155,7 @@ class ServiceController extends Controller
     }
 
     public function Service (){
-        $services = Service::latest()->paginate(12);
+        $services = Service::where('active', 1)->latest()->paginate(12);
         return view('frontend.services',compact('services'));
     }
 }

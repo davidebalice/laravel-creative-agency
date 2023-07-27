@@ -1,7 +1,3 @@
-@php
-$services = App\Models\Service::orderBy('id', 'asc')->limit(5)->get();
-@endphp
-
 <section class="services">
     <div class="container">
         <div class="services__title__wrap">

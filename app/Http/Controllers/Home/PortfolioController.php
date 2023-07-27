@@ -28,7 +28,6 @@ class PortfolioController extends Controller
     }
 
     public function StorePortfolio(Request $request){
-
         $request->validate([
             'name' => 'required',
             'title' => 'required',
@@ -79,7 +78,6 @@ class PortfolioController extends Controller
     }
 
     public function UpdatePortfolio(Request $request){
-        
         $id = $request->id;
         $portfolio = Portfolio::findOrFail($id);
 
@@ -124,6 +122,18 @@ class PortfolioController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+    public function ActivePortfolio(Request $request, $id){
+        try {
+            $portfolio = Portfolio::findOrFail($id);
+            $portfolio->update([
+                'active' => $request->active,
+            ]);
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        }
     }
 
     public function DeletePortfolio ($id){

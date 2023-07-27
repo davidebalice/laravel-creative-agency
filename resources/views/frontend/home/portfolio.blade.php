@@ -44,9 +44,6 @@
         </div>
     </div>
     <div class="tab-content" id="portfolioTabContent">
-        @php
-            $portfolio = App\Models\Portfolio::latest()->get();
-        @endphp
         <div class="tab-pane show active" id="all" role="tabpanel" aria-labelledby="all-tab">
             <div class="container">
                 <div class="row gx-0 justify-content-center">

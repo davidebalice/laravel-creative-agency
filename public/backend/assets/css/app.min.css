@@ -3856,8 +3856,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     flex-direction: row !important;
     width: fit-content;
     line-height: 26px !important;
-    padding-bottom:5px;
-    padding-top:5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .addButton2 {
     align-items: center;
@@ -3913,6 +3913,23 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content:space-between;
+    justify-content: space-between;
     gap: 10px;
+}
+.form-check-input.activeSwtich {
+    width: 44px;
+    height: 22px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #a1a1a1;
+}
+.form-check-input.activeSwtich:checked {
+    background-color: #08b110;
+}
+.form-check-input.activeSwtich[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
 }

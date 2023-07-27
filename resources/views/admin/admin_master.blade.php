@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Creative agency Laravel Cms" name="description" />
         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
         <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />

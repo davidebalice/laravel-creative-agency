@@ -1,10 +1,10 @@
 @extends('admin.admin_master')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <style>
 .even{background: #f9f9f9}
 </style>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="page-content">
     <div class="container-fluid">
 
@@ -55,7 +55,7 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Data</th>
+                                            <th style="width: 54px;" >Publish</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Category</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>                                            
@@ -82,12 +82,17 @@
                                                 @endphp
                                             @endif
                                             <tr class="{{ $class_row }}">
-                                                <td class="sorting_1 dtr-control">{{ $item->date }}</td>
+                                                <td class="dtr-control">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input activeSwtich" type="checkbox" role="switch" data-item-id="active_{{ $item->id }}" 
+                                                        //prettier-ignore
+                                                        @if ($item->active)
+                                                            checked
+                                                        @endif
+                                                        id="active_{{ $item->id }}">
+                                                    </div>
+                                                </td>
                                                 <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
-                                              
-                                               
-                                                
-                                                
                                                 <td>{{$item-> categories->category  ?? 'None'}}
 
                                                 @php
@@ -117,19 +122,19 @@
                                         @endforeach
                                         </tbody>
                                     </table>
+                                    {{ $blogs->links() }}
                                 </div>
                         </div>
-                        <div class="row">
-                            {{ $blogs->links() }}
-                        </div>
-
                     </div>
                 </div>
-            </div> <!-- end col -->
-        </div> <!-- end row -->
-
-    </div> <!-- container-fluid -->
+            </div>
+        </div>
+    </div>
 </div>
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeSwitches('blog');
+      });
+    </script>
 @endsection

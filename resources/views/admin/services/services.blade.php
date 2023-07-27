@@ -1,11 +1,10 @@
 @extends('admin.admin_master')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
 <style>
 .even{background: #f9f9f9}
 </style>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="page-content">
     <div class="container-fluid">
 
@@ -56,7 +55,7 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Id</th>
+                                            <th style="width: 54px;" >Publish</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-label="Position: activate to sort column ascending">Icon</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 500px;" aria-label="Position: activate to sort column ascending">Service</th>
@@ -82,7 +81,16 @@
                                                 @endphp
                                             @endif
                                             <tr class="{{ $class_row }}">
-                                                <td class="sorting_1 dtr-control">{{ $item->id }}</td>
+                                                <td class="dtr-control">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input activeSwtich" type="checkbox" role="switch" data-item-id="active_{{ $item->id }}" 
+                                                        //prettier-ignore
+                                                        @if ($item->active)
+                                                            checked
+                                                        @endif
+                                                        id="active_{{ $item->id }}">
+                                                    </div>
+                                                </td>
                                                 <td><img src="{{ asset($item->icon) }}" style="width:80px;height:auto;border:1px solid #ccc"></td>
                                                 <td><img src="{{ asset($item->photo) }}" style="width:150px;height:auto;border:1px solid #ccc"></td>
                                                 <td>{{ $item->title }}</td>
@@ -98,19 +106,8 @@
                                         @endforeach
                                         </tbody>
                                     </table>
+                                    {{ $services->links() }}
                                 </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-5">
-                                <div class="dataTables_info" id="datatable_info" role="status" ariaf-live="polite">
-                                        
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
-                                    
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,4 +116,9 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeSwitches('service');
+      });
+    </script>
 @endsection

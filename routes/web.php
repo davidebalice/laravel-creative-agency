@@ -12,9 +12,9 @@ use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+Route::controller(HomepageController::class)->group(function(){
+    Route::get('/', 'Homepage')->name('index');
+});
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -60,6 +60,7 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::get('/portfolio/delete/{id}', 'DeletePortfolio')->name('portfolio.delete');
     Route::post('/portfolio/update', 'UpdatePortfolio')->name('portfolio.update');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+    Route::post('/active/portfolio/{id}', 'ActivePortfolio')->name('portfolio.active');
     Route::get('/portfolio', 'Portfolio')->name('portfolio');
 });
 
@@ -70,6 +71,7 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('/services/edit/{id}', 'EditService')->name('services.edit');
     Route::get('/services/delete/{id}', 'DeleteService')->name('services.delete');
     Route::post('/services/update', 'UpdateService')->name('services.update');
+    Route::post('/active/service/{id}', 'ActiveService')->name('services.active');
     Route::get('/services/details/{id}', 'ServiceDetails')->name('services.details');
 });
 
@@ -79,6 +81,7 @@ Route::controller(BlogCategoryController::class)->group(function(){
     Route::post('/store/blog/category', 'StoreBlogCategory')->name('blog.category.store');
     Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('blog.category.edit');
     Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('blog.category.delete');
+    Route::post('/active/blogcategory/{id}', 'ActiveBlogCategory')->name('blog.category.active');
     Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('blog.category.update');
 });
 
@@ -92,6 +95,7 @@ Route::controller(BlogController::class)->group(function(){
     Route::post('/blog/update/', 'UpdateBlog')->name('blog.update');
     Route::get('/blog/details/{id}', 'BlogDetails')->name('blog.details');
     Route::get('/blog/category/{id}', 'CategoryBlog')->name('category.post');
+    Route::post('/active/blog/{id}', 'ActiveBlog')->name('blog.active');
     Route::get('/blog', 'HomeBlog')->name('blog');
 });
 

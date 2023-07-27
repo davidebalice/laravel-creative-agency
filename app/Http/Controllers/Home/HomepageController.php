@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Service;
+use App\Models\Portfolio;
 
 class HomepageController extends Controller
 {
     public function Homepage(){
-        return view('frontend.index');
+        $portfolio = Portfolio::where('active', 1)->latest()->paginate(12);
+        $services = Service:: where('active', 1)->orderBy('id', 'asc')->limit(5)->get();
+        return view('frontend.index',compact('services','portfolio'));
     }
 }
