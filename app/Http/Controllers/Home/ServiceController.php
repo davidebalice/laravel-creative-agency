@@ -11,7 +11,7 @@ class ServiceController extends Controller
 {
     public function AdminServices(Request $request){
         $searchTerm = $request->input('q');
-        $query = Service::latest();
+        $query = Service::orderby('position','ASC')->latest();
         if ($searchTerm) {
             $query->where(function ($q) use ($searchTerm) {
                 $q->where('title', 'like', '%' . $searchTerm . '%')
@@ -157,5 +157,55 @@ class ServiceController extends Controller
     public function Service (){
         $services = Service::where('active', 1)->latest()->paginate(12);
         return view('frontend.services',compact('services'));
+    }
+
+    public function Sort($action,$id) {
+        
+        $services = Service::findOrFail($id);
+        $order = $services->position;
+        
+        if($action=="up")
+		{
+            $order--;
+            $newOrder=$order+1;
+        }
+        elseif($action=="down")
+		{
+            $order++;
+            $newOrder=$order-1;
+        }
+        if($order<=1)
+        {
+            $order=1;
+        }
+        if($newOrder<=1)
+        {
+            $newOrder=1;
+        }
+        
+        //->whereNull('deleted_at')
+
+        Service::where('position', $order)
+        ->chunkById(100, function ($serviceUpdate) use ($newOrder) {
+            foreach ($serviceUpdate as $service) {
+                Service::where('id', $service->id)
+                    ->update(['position' => $newOrder]);
+            }
+        });
+        
+        Service::where('id', $id)
+        ->update(['position' => $order]);
+
+        $i=0;
+        Service::orderby('position','ASC')
+        ->chunkById(100, function ($serviceUpdate) use ($i) {
+            foreach ($serviceUpdate as $service) {
+                $i++;
+                Service::where('id', $service->id)->update(['position' => $i]);
+            }
+        });	
+
+        $services = Service::orderby('position','ASC')->paginate(15);
+        return view('admin.services.services',compact('services'));
     }
 }

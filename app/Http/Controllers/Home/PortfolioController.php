@@ -11,7 +11,7 @@ class PortfolioController extends Controller
 { 
     public function AdminPortfolio(Request $request){
         $searchTerm = $request->input('q');
-        $query = Portfolio::latest();
+        $query = Portfolio::orderby('position','ASC')->latest();
         if ($searchTerm) {
             $query->where(function ($q) use ($searchTerm) {
                 $q->where('title', 'like', '%' . $searchTerm . '%')

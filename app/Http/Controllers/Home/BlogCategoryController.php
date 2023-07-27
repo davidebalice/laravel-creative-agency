@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class BlogCategoryController extends Controller
 {
     public function BlogCategory(){
-        $blogcategory = BlogCategory::latest()->get();
+        $blogcategory = BlogCategory::orderby('position','ASC')->latest()->paginate(12);
         return view('admin.blog_category.category',compact('blogcategory'));
     }
 
@@ -95,5 +95,55 @@ class BlogCategoryController extends Controller
         );
         session()->flash('message','Blog category deleted');
         return redirect()->route('admin.blog.category')->with($notification);
+    }
+
+    public function Sort($action,$id) {
+        
+        $blogCategory = BlogCategory::findOrFail($id);
+        $order = $blogCategory->position;
+        
+        if($action=="up")
+		{
+            $order--;
+            $newOrder=$order+1;
+        }
+        elseif($action=="down")
+		{
+            $order++;
+            $newOrder=$order-1;
+        }
+        if($order<=1)
+        {
+            $order=1;
+        }
+        if($newOrder<=1)
+        {
+            $newOrder=1;
+        }
+        
+        //->whereNull('deleted_at')
+
+        BlogCategory::where('position', $order)
+        ->chunkById(100, function ($blogUpdate) use ($newOrder) {
+            foreach ($blogUpdate as $blogCategory) {
+                BlogCategory::where('id', $blogCategory->id)
+                    ->update(['position' => $newOrder]);
+            }
+        });
+        
+        BlogCategory::where('id', $id)
+        ->update(['position' => $order]);
+
+        $i=0;
+        BlogCategory::orderby('position','ASC')
+        ->chunkById(100, function ($blogUpdate) use ($i) {
+            foreach ($blogUpdate as $blogCategory) {
+                $i++;
+                BlogCategory::where('id', $blogCategory->id)->update(['position' => $i]);
+            }
+        });	
+
+        $blogcategory = BlogCategory::orderby('position','ASC')->paginate(15);
+        return view('admin.blog_category.category',compact('blogcategory'));
     }
 }

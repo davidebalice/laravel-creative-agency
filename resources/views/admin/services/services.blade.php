@@ -66,7 +66,19 @@
                                         @php
                                             $i=1;
                                             $class_row="even";
+                                            $totRecords = count($services);
                                         @endphp
+
+
+                                        @if ($totRecords==0)
+                                            <tr>
+                                                <td colspan="5">
+                                                    <h5 class="py-5 pl-4">No result</h5>
+                                                </td>
+                                            </tr>
+                                        @endif            
+
+
                                         @foreach ($services as $item) 
                                             @php
                                                 $i++
@@ -91,16 +103,40 @@
                                                         id="active_{{ $item->id }}">
                                                     </div>
                                                 </td>
-                                                <td><img src="{{ asset($item->icon) }}" style="width:80px;height:auto;border:1px solid #ccc"></td>
-                                                <td><img src="{{ asset($item->photo) }}" style="width:150px;height:auto;border:1px solid #ccc"></td>
+                                                <td><img src="{{ asset($item->icon) }}" style="width:80px;height:auto;border:1px solid #ccc"
+                                                    onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
+                                                <td><img src="{{ asset($item->photo) }}" style="width:150px;height:auto;border:1px solid #ccc"
+                                                    onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>
-                                                    <a href="{{ route('services.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('services.edit',$item->id) }}" class="btn btn-info sm button_edit" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                     <a href="{{ route('services.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
+                                                    <hr/>
+
+                                                    @if ($item->position<=1)
+                                                    <a href="#" class="btn btn-success btn-sm button_disable">
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @else
+                                                    <a href="{{url('admin/service/sort/up/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @endif
+                          
+                          
+                                                    @if ($item->position==$totRecords)
+                                                    <a href="#" class="btn btn-success btn-sm button_disable">
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @else
+                                                    <a href="{{url('admin/service/sort/down/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

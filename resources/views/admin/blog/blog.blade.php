@@ -57,6 +57,7 @@
                                         <tr role="row">
                                             <th style="width: 54px;" >Publish</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Data</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Category</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>                                            
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Tags</th>
@@ -92,26 +93,14 @@
                                                         id="active_{{ $item->id }}">
                                                     </div>
                                                 </td>
-                                                <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
-                                                <td>{{$item-> categories->category  ?? 'None'}}
-
-                                                @php
-                                                    /*
-                                                    $leagues = DB::table('blog_categories')->select('*')->where('id', $item->category_id)->first();                                              
-                                                    echo $leagues->category  ?? 'None';
-                                                    */
-                                                @endphp 
-
-                                                <br />
-                                                  
-                                              
-                                                
-                                                
-                                                </td>
+                                                <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"
+                                                    onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
+                                                <td>{{$item->formatted_created_at ?? 'None' }}</td>
+                                                <td>{{$item->categories->category  ?? 'None'}}</td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>{{ $item->tags }}</td>
                                                 <td>
-                                                    <a href="{{ route('blog.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('blog.edit',$item->id) }}" class="btn btn-info sm button_edit" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                     <a href="{{ route('blog.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">

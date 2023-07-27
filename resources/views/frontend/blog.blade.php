@@ -39,10 +39,8 @@ Blog
         </ul>
     </div>
 </section>
-<!-- breadcrumb-area-end -->
 
 
-<!-- blog-area -->
 <section class="standard__blog">
     <div class="container">
         <div class="row">
@@ -93,12 +91,9 @@ Blog
                             <button type="submit"><i class="fal fa-search"></i></button>
                         </form>
                     </div>
-
                    
                     @include('frontend.partials.recent_blog_side')   
-
                     @include('frontend.partials.category_blog_side')    
-
 
                     <div class="widget">
                         <h4 class="widget-title">Recent Comment</h4>

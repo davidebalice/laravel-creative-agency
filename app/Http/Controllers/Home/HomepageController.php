@@ -10,8 +10,8 @@ use App\Models\Portfolio;
 class HomepageController extends Controller
 {
     public function Homepage(){
-        $portfolio = Portfolio::where('active', 1)->latest()->paginate(12);
-        $services = Service:: where('active', 1)->orderBy('id', 'asc')->limit(5)->get();
+        $portfolio = Portfolio::where('active', 1)->orderBy('position', 'asc')->latest()->paginate(12);
+        $services = Service:: where('active', 1)->orderBy('position', 'asc')->limit(5)->get();
         return view('frontend.index',compact('services','portfolio'));
     }
 }

@@ -21,7 +21,13 @@ class BlogController extends Controller
                     ->orWhere('description', 'like', '%' . $searchTerm . '%');
             });
         }
-        $blogs = $query->paginate(12);
+        $blogs = $query->orderBy('created_at','DESC')->paginate(12);
+        foreach ($blogs as $item) {
+            $item->formatted_created_at = isset($item->created_at)
+                ? Carbon::parse($item->created_at)->format('d/m/Y H:i:s')
+                : 'None';
+        }
+    
         return view('admin.blog.blog', compact('blogs'));
     }
 

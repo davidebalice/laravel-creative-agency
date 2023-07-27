@@ -72,6 +72,7 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('/services/edit/{id}', 'EditService')->name('services.edit');
     Route::get('/services/delete/{id}', 'DeleteService')->name('services.delete');
     Route::post('/services/update', 'UpdateService')->name('services.update');
+    Route::get('/admin/service/sort/{action}/{id}', 'Sort')->name('admin.service.sort'); 
     Route::post('/active/service/{id}', 'ActiveService')->name('services.active');
     Route::get('/services/details/{id}', 'ServiceDetails')->name('services.details');
 });
@@ -83,6 +84,7 @@ Route::controller(BlogCategoryController::class)->group(function(){
     Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('blog.category.edit');
     Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('blog.category.delete');
     Route::post('/active/blogcategory/{id}', 'ActiveBlogCategory')->name('blog.category.active');
+    Route::get('/admin/blogcategory/sort/{action}/{id}', 'Sort')->name('admin.blogcategory.sort'); 
     Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('blog.category.update');
 });
 

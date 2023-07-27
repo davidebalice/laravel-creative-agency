@@ -100,7 +100,8 @@
                                                         id="active_{{ $item->id }}">
                                                     </div>
                                                 </td>
-                                                <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
+                                                <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"
+                                                    onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>
