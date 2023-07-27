@@ -64,7 +64,18 @@
                                         @php
                                             $i=1;
                                             $class_row="even";
+                                            $totRecords = count($portfolio);
                                         @endphp
+
+                                      
+                                        @if ($totRecords==0)
+                                            <tr>
+                                                <td colspan="5">
+                                                    <h5 class="py-5 pl-4">No result</h5>
+                                                </td>
+                                            </tr>
+                                        @endif    
+
                                         @foreach ($portfolio as $item) 
                                             @php
                                                 $i++
@@ -93,12 +104,35 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->title }}</td>
                                                 <td>
-                                                    <a href="{{ route('portfolio.edit',$item->id) }}" class="btn btn-info sm" title="Edit">
+                                                    <a href="{{ route('portfolio.edit',$item->id) }}" class="btn btn-info sm button_edit" title="Edit">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
                                                     <a href="{{ route('portfolio.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
+
+                                                    <hr/>
+
+                                                    @if ($item->position<=1)
+                                                    <a href="#" class="btn btn-success btn-sm button_disable">
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @else
+                                                    <a href="{{url('admin/portfolio/sort/up/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @endif
+                          
+                          
+                                                    @if ($item->position==$totRecords)
+                                                    <a href="#" class="btn btn-success btn-sm button_disable">
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @else
+                                                    <a href="{{url('admin/portfolio/sort/down/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                    </a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

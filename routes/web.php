@@ -60,6 +60,7 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::get('/portfolio/delete/{id}', 'DeletePortfolio')->name('portfolio.delete');
     Route::post('/portfolio/update', 'UpdatePortfolio')->name('portfolio.update');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+    Route::get('/admin/portfolio/sort/{action}/{id}', 'Sort')->name('admin.portfolio.sort'); 
     Route::post('/active/portfolio/{id}', 'ActivePortfolio')->name('portfolio.active');
     Route::get('/portfolio', 'Portfolio')->name('portfolio');
 });

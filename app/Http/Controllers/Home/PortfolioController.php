@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image As Image;
 use App\Models\Portfolio;
 use Carbon\Carbon;
-
 class PortfolioController extends Controller
 { 
     public function AdminPortfolio(Request $request){
@@ -163,5 +162,55 @@ class PortfolioController extends Controller
     public function Portfolio (){
         $portfolio = Portfolio::latest()->paginate(12);
         return view('frontend.portfolio',compact('portfolio'));
+    }
+
+    public function Sort($action,$id) {
+        
+        $portfolio = Portfolio::findOrFail($id);
+        $order = $portfolio->position;
+        
+        if($action=="up")
+		{
+            $order--;
+            $newOrder=$order+1;
+        }
+        elseif($action=="down")
+		{
+            $order++;
+            $newOrder=$order-1;
+        }
+        if($order<=1)
+        {
+            $order=1;
+        }
+        if($newOrder<=1)
+        {
+            $newOrder=1;
+        }
+        
+        //->whereNull('deleted_at')
+
+        Portfolio::where('position', $order)
+        ->chunkById(100, function ($portfolioUpdate) use ($newOrder) {
+            foreach ($portfolioUpdate as $portfolio) {
+                Portfolio::where('id', $portfolio->id)
+                    ->update(['position' => $newOrder]);
+            }
+        });
+        
+        Portfolio::where('id', $id)
+        ->update(['position' => $order]);
+
+        $i=0;
+        Portfolio::orderby('position','ASC')
+        ->chunkById(100, function ($portfolioUpdate) use ($i) {
+            foreach ($portfolioUpdate as $portfolio) {
+                $i++;
+                Portfolio::where('id', $portfolio->id)->update(['position' => $i]);
+            }
+        });	
+
+        $portfolio = Portfolio::orderby('position','ASC')->paginate(15);
+        return view('admin.portfolio.portfolio',compact('portfolio'));
     }
 }
