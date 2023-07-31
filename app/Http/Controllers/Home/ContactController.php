@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\PageBanner;
 use Carbon\Carbon;
 
 class ContactController extends Controller
 {
     public function Contact(){
-        return view('frontend.contact');
+        $pagebanner = PageBanner::find(1);
+        return view('frontend.contact',compact('pagebanner'));
     }
    
     public function StoreMessage(Request $request){

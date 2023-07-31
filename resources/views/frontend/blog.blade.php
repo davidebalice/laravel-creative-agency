@@ -5,8 +5,12 @@
 Blog
 @endsection
 
-<!-- breadcrumb-area -->
-<section class="breadcrumb__wrap">
+
+@if(file_exists(public_path($pagebanner->blog)))
+    <section class="breadcrumb__wrap backgroundBanner" style="background: url('{{ asset($pagebanner->blog) }}');">
+@else
+    <section class="breadcrumb__wrap">
+@endif
     <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
@@ -27,16 +31,6 @@ Blog
                 </div>
             </div>
         </div>
-    </div>
-    <div class="breadcrumb__wrap__icon">
-        <ul>
-            <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
-        </ul>
     </div>
 </section>
 

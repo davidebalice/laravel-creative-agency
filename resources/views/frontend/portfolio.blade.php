@@ -5,7 +5,11 @@
 Portfolio
 @endsection
 
-<section class="breadcrumb__wrap">
+@if(file_exists(public_path($pagebanner->portfolio)))
+    <section class="breadcrumb__wrap backgroundBanner" style="background: url('{{ asset($pagebanner->portfolio) }}');">
+@else
+    <section class="breadcrumb__wrap">
+@endif
     <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
@@ -21,33 +25,11 @@ Portfolio
             </div>
         </div>
     </div>
-    <div class="breadcrumb__wrap__icon">
-        <ul>
-            <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
-        </ul>
-    </div>
 </section>
 
 <section class="portfolio__inner">
     <div class="container">
-        <!--
-        <div class="row">
-            <div class="col-12">
-                <div class="portfolio__inner__nav">
-                    <button class="active" data-filter="*">all</button>
-                    <button data-filter=".cat-one">mobile apps</button>
-                    <button data-filter=".cat-two">website Design</button>
-                    <button data-filter=".cat-three">ui/kit</button>
-                    <button data-filter=".cat-four">Landing page</button>
-                </div>
-            </div>
-        </div>
-        -->
+       
         <div class="portfolio__inner__active">
             
             @foreach ($portfolio as $item)

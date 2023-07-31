@@ -1,13 +1,16 @@
 @extends('frontend.main_master')
 @section('main')
 
-
 @section('title')
 About
 @endsection
 
-<!-- breadcrumb-area -->
-<section class="breadcrumb__wrap">
+@if(file_exists(public_path($pagebanner->about)))
+    <section class="breadcrumb__wrap backgroundBanner" style="background: url('{{ asset($pagebanner->about) }}');">
+@else
+    <section class="breadcrumb__wrap">
+@endif
+
     <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
@@ -23,20 +26,8 @@ About
             </div>
         </div>
     </div>
-    <div class="breadcrumb__wrap__icon">
-        <ul>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon01.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon02.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon03.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon04.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon05.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon06.png') }}" alt=""></li>
-        </ul>
-    </div>
 </section>
-<!-- breadcrumb-area-end -->
 
-<!-- about-area -->
 <section class="about about__style__two">
     <div class="container">
         <div class="row align-items-center">
@@ -86,19 +77,10 @@ About
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
-                           
-                           
-                           
                             <p class="desc">
                                 {!! $aboutpage->long_description !!}
                             </p>
-
-
-
                         </div>
-
-
-
 
                         <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                             <div class="about__skill__wrap">
@@ -377,9 +359,7 @@ About
         </div>
     </div>
 </section>
-<!-- services-area-end -->
 
-<!-- testimonial-area -->
 <section class="testimonial testimonial__style__two">
     <div class="container">
         <div class="row justify-content-center">
@@ -435,9 +415,7 @@ About
         </ul>
     </div>
 </section>
-<!-- testimonial-area-end -->
 
-<!-- blog-area -->
 <section class="blog blog__style__two">
     <div class="container">
         <div class="row gx-0 justify-content-center">
@@ -492,9 +470,7 @@ About
         </div>
     </div>
 </section>
-<!-- blog-area-end -->
 
-<!-- contact-area -->
 <section class="homeContact">
     <div class="container">
         <div class="homeContact__wrap">
@@ -524,6 +500,5 @@ About
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
 
 @endsection

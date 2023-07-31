@@ -2,14 +2,12 @@
     <div data-simplebar class="h-100">
 
         <div id="sidebar-menu">
-            <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
                 <li>
                     <a href="/dashboard" class="waves-effect">
                         <i class="ri-dashboard-line"></i>
-                          <!--<span class="badge rounded-pill bg-success float-end">3</span>-->
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -21,6 +19,16 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route ('home.slide') }}">Options</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Page banner</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route ('page.banner') }}">Banner</a></li>
                     </ul>
                 </li>
 
@@ -66,8 +74,6 @@
                     </ul>
                 </li>
                 
-                <li class="menu-title">Blog</li>
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-menu-fill"></i>

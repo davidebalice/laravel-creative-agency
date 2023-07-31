@@ -49,7 +49,10 @@
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block mainMenuBgDx">
-                                <a href="{{ route('contact')}}" class="btn">Contact</a>
+                                <a href="#" class="btn btnGitHub">
+                                    <span class="fab  fa-github"></span>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </nav>
                     </div>

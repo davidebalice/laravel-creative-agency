@@ -1,7 +1,3 @@
-@php
-    $blogs = App\Models\Blog::latest()->limit(3)->get();
-@endphp
-
 <section class="blog">
     <div class="container">
         <div class="row justify-content-center">
@@ -41,9 +37,6 @@
                 </div>
             </div>
            @endforeach   
-        </div>
-        <div class="blog__button text-center">
-            <a href="blog.html" class="btn">more blog</a>
-        </div>
+        </div>     
     </div>
 </section>

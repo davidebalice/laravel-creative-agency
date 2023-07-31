@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\MultiImage;
+use App\Models\PageBanner;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image As Image;
 
@@ -56,11 +57,11 @@ class AboutController extends Controller
 
     public function HomeAbout (){
         $aboutpage = About::find(1);
-        return view('frontend.about_page',compact('aboutpage'));
+        $pagebanner = PageBanner::find(1);
+        return view('frontend.about_page',compact('aboutpage','pagebanner'));
     }
 
     public function AboutMultiImage (){
-        //$aboutpage = About::find(1);
         return view('admin.about_page.multi_image');
     }
 
@@ -70,18 +71,6 @@ class AboutController extends Controller
         
         foreach($image as $multi_image) {
             $name_gen = hexdec(uniqid()).'.'. $multi_image->getClientOriginalExtension();
-
-            /*
-            // resize the image to a width of 300 and constrain aspect ratio (auto height)
-            $img->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            // resize the image to a height of 200 and constrain aspect ratio (auto width)
-            $img->resize(null, 200, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            */
 
             Image::make($multi_image)->resize(220,220)->save('upload/multi_image/'.$name_gen);
             $save_url = 'upload/multi_image/'.$name_gen;
@@ -114,12 +103,6 @@ class AboutController extends Controller
         if($request->file('multi_image')) {
             $image = $request->file('multi_image');
             $name_gen = hexdec(uniqid()).'.'. $image->getClientOriginalExtension();
-
-            /*
-            $img->resize(null, 200, function ($constraint) {
-                            $constraint->aspectRatio();
-                        });
-            */
 
             Image::make($image)->resize(null, 200, function ($constraint) {$constraint->aspectRatio();})->save('upload/multi_image/'.$name_gen);
             //Image::make($image)->resize(220,220)->save('upload/multi_image/'.$name_gen);

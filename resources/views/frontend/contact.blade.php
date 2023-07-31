@@ -6,8 +6,12 @@ Contact
 @endsection
 
 
-<!-- breadcrumb-area -->
-<section class="breadcrumb__wrap">
+@if(file_exists(public_path($pagebanner->contact)))
+    <section class="breadcrumb__wrap backgroundBanner" style="background: url('{{ asset($pagebanner->contact) }}');">
+@else
+    <section class="breadcrumb__wrap">
+@endif
+
     <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
@@ -23,27 +27,14 @@ Contact
             </div>
         </div>
     </div>
-    <div class="breadcrumb__wrap__icon">
-        <ul>
-            <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-            <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
-        </ul>
-    </div>
 </section>
-<!-- breadcrumb-area-end -->
 
-<!-- contact-map -->
+
 <div id="contact-map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96811.54759587669!2d-74.01263924803828!3d40.6880494567041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bae694479a3%3A0xb9949385da52e69e!2sBarclays%20Center!5e0!3m2!1sen!2sbd!4v1636195194646!5m2!1sen!2sbd"
         allowfullscreen loading="lazy"></iframe>
 </div>
-<!-- contact-map-end -->
 
-<!-- contact-area -->
 <div class="contact-area">
     <div class="container">
         <form action="{{ route('store.message') }}" class="contact__form" method="post">

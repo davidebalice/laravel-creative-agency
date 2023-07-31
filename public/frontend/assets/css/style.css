@@ -2297,9 +2297,11 @@ label {
     visibility: visible;
 }
 
-/*=============================
-Breadcrumb
-=============================*/
+.backgroundBanner {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
 .breadcrumb__wrap {
     background: #f7f7f7;
     padding: 275px 0 155px;
@@ -5061,12 +5063,9 @@ Breadcrumb
     max-width: 80px;
 }
 
-/*=============================
-10. Blog
-=============================*/
 .blog {
     position: relative;
-    padding: 130px 0 365px;
+    padding: 130px 0 65px;
 }
 @media (max-width: 991.98px) {
     .blog {
@@ -6272,12 +6271,9 @@ Breadcrumb
     line-height: 1.5;
 }
 
-/*=============================
-13. Footer
-=============================*/
 .footer {
     background: #191b1e;
-    padding: 310px 0 95px;
+    padding: 70px 0 95px;
 }
 @media (max-width: 767.98px) {
     .footer {
@@ -6826,7 +6822,7 @@ body.active-dark-mode p {
     }
 }
 
-.slideText2{
+.slideText2 {
     font-size: 42px !important;
 }
 
@@ -6836,7 +6832,15 @@ body.active-dark-mode p {
     }
 }
 
-.laravelHome{
-    width:28%;
-    margin-top:40px
+.laravelHome {
+    width: 28%;
+    max-width: 200px;
+    margin-top: 40px;
+}
+
+.btnGitHub {
+    padding: 20px !important;
+    display: flex;
+    gap: 10px !important;
+    justify-content: start !important;
 }

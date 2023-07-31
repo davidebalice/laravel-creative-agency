@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image As Image;
 use App\Models\Portfolio;
+use App\Models\PageBanner;
 use Carbon\Carbon;
 class PortfolioController extends Controller
 { 
@@ -161,7 +162,8 @@ class PortfolioController extends Controller
 
     public function Portfolio (){
         $portfolio = Portfolio::latest()->paginate(12);
-        return view('frontend.portfolio',compact('portfolio'));
+        $pagebanner = PageBanner::find(1);
+        return view('frontend.portfolio',compact('portfolio','pagebanner'));
     }
 
     public function Sort($action,$id) {

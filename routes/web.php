@@ -11,6 +11,7 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
+use App\Http\Controllers\Home\PageBannerController;
 
 Route::controller(HomepageController::class)->group(function(){
     Route::get('/', 'Homepage')->name('index');
@@ -105,6 +106,11 @@ Route::controller(BlogController::class)->group(function(){
 Route::controller(FooterController::class)->group(function(){
     Route::get('/admin/footer', 'FooterSetup')->name('footer');
     Route::post('/update/footer/', 'UpdateFooter')->name('update.footer');
+});
+
+Route::controller(PageBannerController::class)->group(function(){
+    Route::get('/admin/pagebanner', 'PageBanner')->name('page.banner');
+    Route::post('/update/pagebanner/', 'UpdatePageBanner')->name('update.page.banner');
 });
 
 Route::controller(ContactController::class)->group(function(){

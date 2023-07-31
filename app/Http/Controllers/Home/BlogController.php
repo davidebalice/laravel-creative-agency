@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\PageBanner;
 use Intervention\Image\Facades\Image As Image;
 use Carbon\Carbon;
 
@@ -67,14 +68,7 @@ class BlogController extends Controller
             Image::make($image)->resize(430,327)->save('upload/blog/'.$name_gen_home);
             $save_url_home = 'upload/blog/'.$name_gen_home;
         } 
-        /*
-        if($request->file('image_home')) {
-            $image = $request->file('image_home');
-            $name_gen_home = hexdec(uniqid()).'_home.'. $image->getClientOriginalExtension();
-            Image::make($image)->resize(1020,519)->save('upload/blog/'.$name_gen_home);
-            $save_url_home = 'upload/blog/'.$name_gen_home;
-        } 
-        */
+        
         Blog::insert([
             'category_id' => $request->category_id,
             'title' => $request->title,
@@ -137,6 +131,7 @@ class BlogController extends Controller
             'title' => $request->title,
             'tags' => $request->tags,
             'category_id' => $request->category_id,
+            'created_at' => $request->created_at,
             'description' => $request->description,
             'image' => $save_url,
             'image_home' => $save_url_home
@@ -201,7 +196,8 @@ class BlogController extends Controller
     public function HomeBlog() {
         $allblogs = Blog::latest()->paginate(12);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
-        return view('frontend.blog',compact('allblogs','categories'));
+        $pagebanner = PageBanner::find(1);
+        return view('frontend.blog',compact('allblogs','categories','pagebanner'));
     }
     
 }
