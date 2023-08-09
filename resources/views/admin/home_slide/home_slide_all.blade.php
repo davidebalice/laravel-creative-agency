@@ -71,28 +71,12 @@
                             </a>
                         </form>
 
-                        
-                        <!--
-
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Select</label>
-                            <div class="col-sm-10">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected="">Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    </select>
-                            </div>
-                        </div>
-                       
-                        -->
-
+                      
 
 
                     </div>
                 </div>
-            </div> <!-- end col -->
+            </div>
         </div>
     </div>
 </div>

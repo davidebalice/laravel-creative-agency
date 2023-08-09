@@ -67,9 +67,8 @@ Contact
         </form>
     </div>
 </div>
-<!-- contact-area-end -->
 
-<!-- contact-info-area -->
+
 <section class="contact-info-area">
     <div class="container">
         <div class="row justify-content-center">
@@ -111,9 +110,8 @@ Contact
         </div>
     </div>
 </section>
-<!-- contact-info-area-end -->
 
-<!-- contact-area -->
+
 <section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
@@ -143,6 +141,5 @@ Contact
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
 
 @endsection

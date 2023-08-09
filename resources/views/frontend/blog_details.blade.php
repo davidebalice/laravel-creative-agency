@@ -5,7 +5,6 @@
 Blog
 @endsection
 
-<!-- breadcrumb-area -->
 <section class="breadcrumb__wrap">
     <div class="container custom-container">
         <div class="row justify-content-center">
@@ -33,10 +32,8 @@ Blog
         </ul>
     </div>
 </section>
-<!-- breadcrumb-area-end -->
 
 
-<!-- blog-details-area -->
 <section class="standard__blog blog__details">
     <div class="container">
         <div class="row">
@@ -223,14 +220,9 @@ Blog
                         </form>
                     </div>
                     
-                    
                    @include('frontend.partials.recent_blog_side')
-                   
                    @include('frontend.partials.category_blog_side')
 
-
-                    
-                    
                     <div class="widget">
                         <h4 class="widget-title">Recent Comment</h4>
                         <ul class="sidebar__comment">
@@ -274,10 +266,8 @@ Blog
         </div>
     </div>
 </section>
-<!-- blog-details-area-end -->
 
 
-<!-- contact-area -->
 <section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
@@ -307,7 +297,6 @@ Blog
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
 
 
 

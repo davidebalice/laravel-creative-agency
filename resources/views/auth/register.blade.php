@@ -5,16 +5,10 @@
         <title>Register</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="" name="description" />
-        <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
-
-        <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
         <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
         <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body class="auth-body-bg">
@@ -26,7 +20,6 @@
     
                         <x-guest-layout>
                           
-
                         <div class="text-center mt-4 mb-5">
                             <div class="mb-3">
                                 <a href="index.html" class="auth-logo">
@@ -101,25 +94,18 @@
                                     </x-primary-button>
                                 </div>
                             </form>
-                            <!-- end form -->
                         </div>
                     </div>
-                    <!-- end cardbody -->
                 </div>
-                <!-- end card -->
             </div>
-            <!-- end container -->
         </div>
-        <!-- end -->
         
 
-        <!-- JAVASCRIPT -->
         <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.j') }}s"></script>
         <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
-
         <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
     </body>

@@ -13,7 +13,6 @@
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
 
-            <!-- Password -->
             <div>
                 <x-input-label for="password" :value="__('Password')" />
 

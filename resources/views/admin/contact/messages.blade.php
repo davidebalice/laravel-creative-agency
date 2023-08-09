@@ -9,7 +9,6 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -17,7 +16,6 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
         
         <div class="row">
             <div class="col-12">
@@ -64,11 +62,6 @@
                                                 <td class="sorting_1 dtr-control">{{ $message->tel }}</td>
                                                 <td class="sorting_1 dtr-control">{{ $message->subject }}</td>
                                                 <td>
-                                                    {{--
-                                                    <a href="{{ route('edit.multi.image',$message->id) }}" class="btn btn-info sm" title="Edit data">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-                                                    --}}
                                                     <a href="{{ route('delete.message',$message->id) }}" id="delete" class="btn btn-danger sm" title="Delete data">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
@@ -95,10 +88,10 @@
 
                     </div>
                 </div>
-            </div> <!-- end col -->
-        </div> <!-- end row -->
+            </div> 
+        </div> 
 
-    </div> <!-- container-fluid -->
+    </div> 
 </div>
 
 

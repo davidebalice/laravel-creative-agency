@@ -32,9 +32,8 @@ Portfolio
         </ul>
     </div>
 </section>
-<!-- breadcrumb-area-end -->
 
-<!-- portfolio-details-area -->
+
 <section class="services__details">
     <div class="container">
         <div class="row">
@@ -125,7 +124,6 @@ Portfolio
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
 
 
 @endsection

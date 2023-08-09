@@ -2,8 +2,6 @@
 @section('main')
 
 
-
-<!-- breadcrumb-area -->
 <section class="breadcrumb__wrap">
     <div class="container custom-container">
         <div class="row justify-content-center">
@@ -37,10 +35,7 @@
         </ul>
     </div>
 </section>
-<!-- breadcrumb-area-end -->
 
-
-<!-- blog-area -->
 <section class="standard__blog">
     <div class="container">
         <div class="row">
@@ -94,7 +89,6 @@
 
                    
                     @include('frontend.partials.recent_blog_side')   
-
                     @include('frontend.partials.category_blog_side')    
 
 
@@ -140,10 +134,8 @@
         </div>
     </div>
 </section>
-<!-- blog-area-end -->
 
 
-<!-- contact-area -->
 <section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
@@ -173,8 +165,6 @@
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
-
 
 
 @endsection

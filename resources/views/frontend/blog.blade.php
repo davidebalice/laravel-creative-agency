@@ -164,8 +164,6 @@ Blog
         </div>
     </div>
 </section>
-<!-- contact-area-end -->
-
 
 
 @endsection

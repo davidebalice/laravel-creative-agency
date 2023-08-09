@@ -24,17 +24,6 @@
                 <i class="ri-menu-2-line align-middle"></i>
             </button>
 
-            <!-- 
-            <form class="app-search d-none d-lg-block">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <span class="ri-search-line"></span>
-                </div>
-            </form>
-            -->
-            @php
-                //@include('admin.body.nav')
-            @endphp
         </div>
 
         <div class="d-flex">
@@ -212,8 +201,6 @@
                     <a class="dropdown-item text-danger" href="{{ route('admin.logout')}}"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
                 </div>
             </div>
-
-           
 
         </div>
     </div>

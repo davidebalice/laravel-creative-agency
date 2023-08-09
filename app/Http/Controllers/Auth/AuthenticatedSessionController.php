@@ -31,7 +31,6 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        //session()->flash('message','Login successfully');
 
         $notification = array(
             'message' => 'Login successfully',

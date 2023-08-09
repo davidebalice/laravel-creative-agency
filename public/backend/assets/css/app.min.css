@@ -3933,12 +3933,12 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     outline: none;
     cursor: pointer;
 }
-.button_edit{
-    background-color: #0e9cf3 !important; 
-    border-color: #0e9cf3 !important; 
+.button_edit {
+    background-color: #0e9cf3 !important;
+    border-color: #0e9cf3 !important;
 }
-.button_disable{
+.button_disable {
     background-color: #d1d1d1 !important;
-    border-color: #d1d1d1 !important; 
+    border-color: #d1d1d1 !important;
     color: #333 !important;
-  }
+}

@@ -59,12 +59,9 @@
                         </form>
 
                         
-                     
-
-
                     </div>
                 </div>
-            </div> <!-- end col -->
+            </div>
         </div>
     </div>
 </div>

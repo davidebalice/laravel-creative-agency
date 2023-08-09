@@ -38,7 +38,6 @@ Portfolio
                 <div class="row gx-0 align-items-center">
                     
                     
-                    
                     <div class="col-lg-6 col-md-10 mt-4">
                         <div class="portfolio__inner__thumb">
                             <a href="{{ route('portfolio.details',$item->id) }}">
@@ -66,15 +65,12 @@ Portfolio
                 </div>
             </div>
             @endforeach
-           
 
         </div>
     </div>
 </section>
-<!-- portfolio-area-end -->
 
 
-<!-- contact-area -->
 <section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
@@ -105,9 +101,6 @@ Portfolio
     </div>
 </section>
 
-
-
-<!-- main-area-end -->
 
 
 @endsection

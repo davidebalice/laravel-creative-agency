@@ -56,20 +56,6 @@
                             <hr />
                         @endforeach
                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>

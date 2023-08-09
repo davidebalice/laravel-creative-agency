@@ -5,16 +5,10 @@
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Login" name="description" />
-        <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
-
-        <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
         <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
         <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-        <!-- Toaster Css-->
         <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/toastr.css?d=2') }}" >
     </head>
 
@@ -37,37 +31,30 @@
     
                         <div class="p-3">
                             
-
-
-                            <!-- Session Status -->
                             <x-auth-session-status class="mb-4" :status="session('status')" />
 
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
-                                <!-- Email Address 
+                                <!-- Email  -->
                                 <div>
                                     <x-input-label for="email" :value="__('Email')" />
-
                                     <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
-                                -->
-
+                                
+                                <?/*
                                 <!-- Username  -->
                                 <div>
                                     <x-input-label for="username" :value="__('Username')" />
-
                                     <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
-
                                     <x-input-error :messages="$errors->get('username')" class="mt-2" />
                                 </div>
-                            
+                                */?>
+                                
                                 <!-- Password -->
                                 <div class="mt-4">
                                     <x-input-label for="password" :value="__('Password')" />
-
                                     <x-text-input id="password" class="block mt-1 w-full"
                                                     type="password"
                                                     name="password"
@@ -96,29 +83,17 @@
                                     </x-primary-button>
                                 </div>
                             </form>
-
-
-
-
                         </div>
-                        <!-- end -->
                     </div>
-                    <!-- end cardbody -->
                 </div>
-                <!-- end card -->
             </div>
-            <!-- end container -->
         </div>
-        <!-- end -->
 
-        <!-- JAVASCRIPT -->
         <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
-
-        <!-- Toaster js -->
         <script type="text/javascript" src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
 
         <script>

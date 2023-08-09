@@ -58,7 +58,7 @@
             n("body").removeClass("fullscreen-enable"));
     }
     var a;
-    n("#side-menu").metisMenu(),
+    n("#side-menu").metisMenu().show(),
         n("#vertical-menu-btn").on("click", function (e) {
             e.preventDefault(),
                 n("body").toggleClass("sidebar-enable"),

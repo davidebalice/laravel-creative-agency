@@ -9,15 +9,13 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Multi image</h4>
+                    <h4 class="mb-sm-0">Gallery</h4>
                 </div>
             </div>
         </div>
-        <!-- end page title -->
         
         <div class="row">
             <div class="col-12">
@@ -58,10 +56,10 @@
                                                 <td class="sorting_1 dtr-control">{{ $image->id }}</td>
                                                 <td><img src="{{ asset($image->multi_image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
                                                 <td>
-                                                    <a href="{{ route('edit.multi.image',$image->id) }}" class="btn btn-info sm" title="Edit data">
+                                                    <a href="{{ route('edit.gallery',$image->id) }}" class="btn btn-info sm" title="Edit data">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="{{ route('delete.multi.image',$image->id) }}" id="delete" class="btn btn-danger sm" title="Delete data">
+                                                    <a href="{{ route('delete.gallery',$image->id) }}" id="delete" class="btn btn-danger sm" title="Delete data">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
@@ -87,10 +85,9 @@
 
                     </div>
                 </div>
-            </div> <!-- end col -->
-        </div> <!-- end row -->
-
-    </div> <!-- container-fluid -->
+            </div>
+        </div> 
+    </div> 
 </div>
 
 

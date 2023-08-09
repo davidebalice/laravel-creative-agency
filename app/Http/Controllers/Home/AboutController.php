@@ -14,7 +14,7 @@ class AboutController extends Controller
 {
     public function AboutPage(){
         $aboutpage = About::find(1);
-        return view('admin.about_page.about_page_all',compact('aboutpage'));
+        return view('admin.about_page.about_page',compact('aboutpage'));
     }
 
     public function UpdateAbout(Request $request){
@@ -61,21 +61,17 @@ class AboutController extends Controller
         return view('frontend.about_page',compact('aboutpage','pagebanner'));
     }
 
-    public function AboutMultiImage (){
-        return view('admin.about_page.multi_image');
-    }
-
-    public function StoreMultiImage (Request $request){
+    public function Store (Request $request){
         
-        $image = $request->file('multi_image');
+        $image = $request->file('gallery');
         
-        foreach($image as $multi_image) {
-            $name_gen = hexdec(uniqid()).'.'. $multi_image->getClientOriginalExtension();
+        foreach($image as $gallery) {
+            $name_gen = hexdec(uniqid()).'.'. $gallery->getClientOriginalExtension();
 
-            Image::make($multi_image)->resize(220,220)->save('upload/multi_image/'.$name_gen);
-            $save_url = 'upload/multi_image/'.$name_gen;
+            Image::make($gallery)->resize(220,220)->save('upload/gallery/'.$name_gen);
+            $save_url = 'upload/gallery/'.$name_gen;
             MultiImage::insert([
-                'multi_image' => $save_url,
+                'gallery' => $save_url,
                 'created_at' => Carbon::now()
             ]);
         }
@@ -86,31 +82,34 @@ class AboutController extends Controller
         return redirect()->back()->with($notification);
     }
 
-    public function AllMultiImage (){
-        $allMultiImage = MultiImage::all();
-        return view('admin.about_page.all_multi_image',compact('allMultiImage'));
+    public function Add (){
+        return view('admin.about_page.add');
     }
 
-    public function EditMultiImage ($id){
+    public function Gallery (){
+        $allMultiImage = MultiImage::all();
+        return view('admin.about_page.gallery',compact('allMultiImage'));
+    }
+
+    public function Edit ($id){
         $multiImage = MultiImage::findOrFail($id);
-        return view('admin.about_page.edit_multi_image',compact('multiImage'));
+        return view('admin.about_page.edit',compact('multiImage'));
     }
     
-    public function UpdateMultiImage (Request $request){
+    public function Update (Request $request){
        
-        $multi_image_id = $request->id;
+        $gallery_id = $request->id;
 
-        if($request->file('multi_image')) {
-            $image = $request->file('multi_image');
+        if($request->file('gallery')) {
+            $image = $request->file('gallery');
             $name_gen = hexdec(uniqid()).'.'. $image->getClientOriginalExtension();
 
-            Image::make($image)->resize(null, 200, function ($constraint) {$constraint->aspectRatio();})->save('upload/multi_image/'.$name_gen);
-            //Image::make($image)->resize(220,220)->save('upload/multi_image/'.$name_gen);
+            Image::make($image)->resize(null, 200, function ($constraint) {$constraint->aspectRatio();})->save('upload/gallery/'.$name_gen);
            
-            $save_url = 'upload/multi_image/'.$name_gen;
+            $save_url = 'upload/gallery/'.$name_gen;
 
-            MultiImage::findOrFail($multi_image_id)->update([
-                'multi_image' => $save_url
+            MultiImage::findOrFail($gallery_id)->update([
+                'gallery' => $save_url
             ]);
 
             $notification = array(
@@ -118,22 +117,21 @@ class AboutController extends Controller
                 'alert-type' => 'success'
             );
         }
-        return redirect()->route('all.multi.image')->with($notification);
+        return redirect()->route('gallery')->with($notification);
     }
 
-    public function DeleteMultiImage ($id){
+    public function Delete ($id){
         $multiImage = MultiImage::findOrFail($id);
-        $img = $multiImage->multi_image;
+        $img = $multiImage->gallery;
         if (file_exists($img)){
             @unlink($img);
         }
         MultiImage::findOrFail($id)->delete();
-        //return view('admin.about_page.all_multi_image',compact('multiImage'));
         $notification = array(
             'message' => 'Image deleted',
             'alert-type' => 'error'
         );
         session()->flash('message','Image deleted');
-        return redirect()->route('all.multi.image')->with($notification);
+        return redirect()->route('gallery')->with($notification);
     }
 }
