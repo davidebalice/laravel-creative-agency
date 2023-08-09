@@ -6,20 +6,9 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-4">
-                <div class="footer__widget">
-                    <div class="fw-title">
-                        <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">{{ $footer->number }}</h4>
-                    </div>
-                    <div class="footer__widget__text">
-                        {!! $footer->short_description !!}
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="footer__widget"> 
-                    <div class="fw-title">
-                        <h5 class="sub-title">address</h5>
+                    <div class="fw-title bold">
+                       Company Name
                     </div>                
                     <div class="footer__widget__address">
                         <p>{{ $footer->address }}</p>
@@ -29,17 +18,18 @@
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="footer__widget"> 
+                   
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="footer__widget">
                     <div class="fw-title">
-                        <h5 class="sub-title">Follow me</h5>
-                        <h4 class="title">socially connect</h4>
+                        <h5 class="sub-title">Project on github</h5>
                     </div>
                     <div class="footer__widget__social">
                         <ul class="footer__social__list">
-                            <li><a href="{{ $footer->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="{{ $footer->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="{{ $footer->linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="{{ $footer->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://github.com/davidebalice/laravel-creative-agency" target="_blank">Github.com/davidebalice/laravel-creative-agency</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +39,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>{{ $footer->copyright }} <script>document.write(new Date().getFullYear());</script></p> 
+                        <p>{{ $footer->copyright }} <script>document.write(new Date().getFullYear());</script> - <a href="https://www.davidebalice.dev" target="_blank" class="siteLink">www.davidebalice.dev</a></p> 
                     </div>
                 </div>
             </div>

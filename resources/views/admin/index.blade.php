@@ -19,23 +19,42 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-6 col-md-6">
-                <div class="card dashCard">
+            <div class="col-xl-4 col-md-4">
+                <div class="card dashCard dashCardBg2">
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">CMS</p>
-                                <h4 class="mb-2">Demo of a Cms with portfolio, services, blog and homepage management developed in Laravel.</h4>
                                 <div class="text-center">
                                     <img src="{{ asset('backend/assets/images/laravel.png') }}" alt="Laravel" class="laravelLogo">
                                 </div>
+                                <h5 class="mt-4 text-white text-center">Demo of Website and Cms developed in Laravel 
+                                    <br />
+                                    with portfolio, services, blog and homepage management.</h5>
                             </div>
                         </div>                                            
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-6 col-md-6">
+            <div class="col-xl-4 col-md-4">
+                <div class="card dashCard">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="flex-grow-1">
+                                <h5 class="mb-0">View project on Github</h5>
+                                <div class="text-center">
+                                    <img src="{{ asset('backend/assets/images/github.png') }}" alt="Github" class="githubLogo">
+                                </div>
+                                <a href="https://github.com/davidebalice/laravel-creative-agency" target="_blank">
+                                    <p class="githubLink">Github.com/davidebalice/laravel-creative-agency</p>
+                                </a>
+                            </div>
+                        </div>                                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-4">
                 <div class="card dashCard dashCardBg">
                     <div class="card-body">
                         <div class="d-flex">

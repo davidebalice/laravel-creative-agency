@@ -6782,13 +6782,18 @@ body.active-dark-mode p {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 19px 20px 18px 0px;
 }
+.siteLink {
+    color: #fff;
+}
+.bold {
+    font-weight: bold !important;
+}
 @media (max-width: 1199px) {
     .mainMenuBgDx {
         background-color: none;
         padding: 0px;
     }
 }
-
 @media (max-width: 991px) {
     .logo__black {
         display: none;
@@ -6797,7 +6802,6 @@ body.active-dark-mode p {
         display: inline-block !important;
     }
 }
-
 .bannerPartners::after {
     content: "";
     position: absolute;

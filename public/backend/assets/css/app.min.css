@@ -3869,15 +3869,32 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     padding: 4px 10px 4px 10px;
 }
 .laravelLogo {
-    max-width: 140px;
+    max-width: 100px;
     margin: 0 auto;
     margin-top: 30px;
+}
+.githubLogo {
+    max-width: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.githubLink {
+    color: #333;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
 }
 .dashCard {
     min-height: 300px;
 }
 .dashCardBg {
     background-image: url("../images/bg_dash.jpg");
+    background-size: cover;
+}
+.dashCardBg2 {
+    background-image: url("../images/bg_dash2.jpg");
     background-size: cover;
 }
 .dashTitle {
