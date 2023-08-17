@@ -28,11 +28,9 @@ class BlogController extends Controller
                 ? Carbon::parse($item->created_at)->format('d/m/Y H:i:s')
                 : 'None';
         }
-    
         return view('admin.blog.blog', compact('blogs'));
     }
 
-    
     public function AddBlog(){
         $categories = BlogCategory::orderBy('order','ASC')->get();
         $user = auth()->user();
@@ -181,35 +179,60 @@ class BlogController extends Controller
     }
 
     public function BlogDetails ($id){
-        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
+        $recent_blogs = Blog::with('authors')->latest()->paginate(6);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
         $blogs = Blog::findOrFail($id);
-        return view('frontend.blog_details',compact('blogs','recent_blogs','categories'));
+        $allTags = collect();
+        foreach ($recent_blogs as $item) {
+            $tag = explode(',', $item->tags);
+            $allTags = $allTags->concat($tag);
+        }
+        $allTags = $allTags->unique();
+        return view('frontend.blog_details',compact('blogs','recent_blogs','categories','allTags'));
     }
 
     public function CategoryBlog ($id){
         $blogpost = Blog::where('category_id',$id)->orderBy('created_at','DESC')->paginate(12);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
-        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
+        $recent_blogs = Blog::with('authors')->latest()->paginate(6);
         $categoryname = BlogCategory::findOrFail($id);
-        return view('frontend.category_blog_details',compact('blogpost','recent_blogs','categories','categoryname'));
+        $allTags = collect();
+        foreach ($recent_blogs as $item) {
+            $tag = explode(',', $item->tags);
+            $allTags = $allTags->concat($tag);
+        }
+        $allTags = $allTags->unique();
+        return view('frontend.category_blog_details',compact('blogpost','recent_blogs','categories','categoryname','allTags'));
     }
 
     public function HomeBlog(Request $request) {
 
-        $query = $request->input('key');
-        if ($query) {
+        $querySearch = $request->input('key');
+        $queryTag = $request->input('tag');
+        if ($querySearch) {
             $blogs = Blog::with('authors')
-            ->where('title', 'like', "%$query%")
-            ->where('description', 'like', "%$query%")
+            ->where('title', 'like', "%$querySearch%")
+            ->where('description', 'like', "%$querySearch%")
             ->paginate(12);
+        } elseif ($queryTag) {
+                $blogs = Blog::with('authors')
+                ->where('tags', 'like', "%$queryTag%")
+                ->paginate(12);
         } else {
             $blogs = Blog::with('authors')->latest()->paginate(12);
         }
-        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
+        $recent_blogs = Blog::with('authors')->latest()->paginate(6);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
         $pagebanner = PageBanner::find(1);
-        return view('frontend.blog',compact('blogs','categories','pagebanner','recent_blogs'));
+       
+        $allTags = collect();
+        foreach ($recent_blogs as $item) {
+            $tag = explode(',', $item->tags);
+            $allTags = $allTags->concat($tag);
+        }
+        $allTags = $allTags->unique();
+
+        return view('frontend.blog',compact('blogs','categories','pagebanner','recent_blogs','allTags'));
     }
     
 }

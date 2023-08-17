@@ -58,7 +58,7 @@ Blog
                                     $tags = explode(',',$tags);
                                     foreach ($tags as $value) {
                                         $value=trim($value);
-                                        echo '<a href="">'.$value.'</a>';
+                                        echo '<a href="/blog/?tag='.$value.'">'.$value.'</a>';
                                     }
                                 @endphp
                                  
@@ -79,12 +79,10 @@ Blog
             </div>
             <div class="col-lg-4">
                 <aside class="blog__sidebar">
-                   
                     @include('frontend.partials.form_blog_side')                  
                     @include('frontend.partials.recent_blog_side')   
                     @include('frontend.partials.category_blog_side')    
                     @include('frontend.partials.tags_blog_side')   
-
                 </aside>
             </div>
         </div>

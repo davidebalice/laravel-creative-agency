@@ -77,7 +77,6 @@
                     @include('frontend.partials.category_blog_side')    
                     @include('frontend.partials.tags_blog_side')   
 
-                    
                 </aside>
             </div>
         </div>
