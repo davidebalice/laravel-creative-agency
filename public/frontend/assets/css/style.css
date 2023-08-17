@@ -285,13 +285,10 @@ label {
     }
 }
 
-/*=============================
-    - Button Style
-=============================*/
 .btn {
     user-select: none;
     -moz-user-select: none;
-    background: #0054ff none repeat scroll 0 0;
+    background: #fcaf17 none repeat scroll 0 0;
     border: medium none;
     border-radius: 0;
     color: #fff;
@@ -326,7 +323,7 @@ label {
     left: 0px;
     width: 100%;
     height: 100%;
-    background: #fcaf17;
+    background: #d09010;
     display: block;
     -webkit-transform-origin: right top;
     -ms-transform-origin: right top;
@@ -5301,8 +5298,8 @@ label {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    border-top: 1px solid #f7f7f7;
-    padding-top: 15px;
+    justify-content: space-between;
+    padding-top: 0px;
     margin-top: 25px;
 }
 .standard__blog .blog__post__meta li {
@@ -5335,6 +5332,11 @@ label {
 }
 .standard__blog .blog__post__meta li.post-share {
     margin-left: auto;
+}
+
+.standard__blog__line {
+    height: 70px;
+    width: 100%;
 }
 
 .blog__post__avatar {

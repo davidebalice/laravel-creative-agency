@@ -59,6 +59,13 @@ class PortfolioController extends Controller
             'name' => $request->name,
             'title' => $request->title,
             'description' => $request->description,
+            'date' => $request->date,
+            'client' => $request->client,
+            'link' => $request->link,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'linkedin' => $request->linkedin,
+            'youtube' => $request->youtube,
             'image' => $save_url,
             'image_home' => $save_url_home,
             'created_at' => Carbon::now()
@@ -112,6 +119,13 @@ class PortfolioController extends Controller
             'name' => $request->name,
             'title' => $request->title,
             'description' => $request->description,
+            'date' => $request->date,
+            'client' => $request->client,
+            'link' => $request->link,
+            'facebook' => $request->facebook,
+            'twitter' => $request->twitter,
+            'linkedin' => $request->linkedin,
+            'youtube' => $request->youtube,
             'image' => $save_url,
             'image_home' => $save_url_home
         ]);
@@ -157,7 +171,8 @@ class PortfolioController extends Controller
 
     public function PortfolioDetails ($id){
         $portfolio = Portfolio::findOrFail($id);
-        return view('frontend.portfolio_details',compact('portfolio'));
+        $pagebanner = PageBanner::find(1);
+        return view('frontend.portfolio_details',compact('portfolio','pagebanner'));
     }
 
     public function Portfolio (){

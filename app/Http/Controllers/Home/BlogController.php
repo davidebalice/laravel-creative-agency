@@ -35,7 +35,8 @@ class BlogController extends Controller
     
     public function AddBlog(){
         $categories = BlogCategory::orderBy('order','ASC')->get();
-        return view('admin.blog.add',compact('categories'));
+        $user = auth()->user();
+        return view('admin.blog.add',compact('categories','user'));
     }
 
     public function StoreBlog(Request $request){
@@ -74,6 +75,7 @@ class BlogController extends Controller
             'title' => $request->title,
             'tags' => $request->tags,
             'description' => $request->description,
+            'user_id' => $request->user_id,
             'image' => $save_url,
             'image_home' => $save_url_home,
             'created_at' => Carbon::now()
@@ -88,7 +90,7 @@ class BlogController extends Controller
     }
 
     public function EditBlog($id){
-        $blogs = Blog::findOrFail($id);
+        $blogs = Blog::with('authors')->findOrFail($id);
         $categories = BlogCategory::orderBy('order','ASC')->get();
         return view('admin.blog.edit',compact('blogs','categories'));
     }
@@ -179,25 +181,35 @@ class BlogController extends Controller
     }
 
     public function BlogDetails ($id){
-        $allblogs = Blog::latest()->limit(5)->get();
+        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
         $blogs = Blog::findOrFail($id);
-        return view('frontend.blog_details',compact('blogs','allblogs','categories'));
+        return view('frontend.blog_details',compact('blogs','recent_blogs','categories'));
     }
 
     public function CategoryBlog ($id){
         $blogpost = Blog::where('category_id',$id)->orderBy('created_at','DESC')->paginate(12);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
-        $allblogs = Blog::latest()->limit(5)->get();
+        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
         $categoryname = BlogCategory::findOrFail($id);
-        return view('frontend.category_blog_details',compact('blogpost','allblogs','categories','categoryname'));
+        return view('frontend.category_blog_details',compact('blogpost','recent_blogs','categories','categoryname'));
     }
 
-    public function HomeBlog() {
-        $allblogs = Blog::latest()->paginate(12);
+    public function HomeBlog(Request $request) {
+
+        $query = $request->input('key');
+        if ($query) {
+            $blogs = Blog::with('authors')
+            ->where('title', 'like', "%$query%")
+            ->where('description', 'like', "%$query%")
+            ->paginate(12);
+        } else {
+            $blogs = Blog::with('authors')->latest()->paginate(12);
+        }
+        $recent_blogs = Blog::with('authors')->latest()->paginate(12);
         $categories = BlogCategory::orderBy('order','ASC')->limit(15)->get();
         $pagebanner = PageBanner::find(1);
-        return view('frontend.blog',compact('allblogs','categories','pagebanner'));
+        return view('frontend.blog',compact('blogs','categories','pagebanner','recent_blogs'));
     }
     
 }

@@ -59,6 +59,73 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Date
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="date" class="form-control" type="text" id="example-text-input" style="max-width:250px;" value="{{ $portfolio->date }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Client
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="client" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->client }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Link
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="link" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->link }}">
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Facebook
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="facebook" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->facebook }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Twitter
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="twitter" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->twitter }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Linkedin
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="linkedin" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->linkedin }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Youtube
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="youtube" class="form-control" type="text" id="example-text-input" value="{{ $portfolio->youtube }}">
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
                                    Image
                                 </label>
                                 <div class="col-sm-10">

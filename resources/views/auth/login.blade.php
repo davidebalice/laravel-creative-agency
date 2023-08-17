@@ -21,7 +21,7 @@
 
                         <div class="text-center mt-4 mb-4">
                             <div class="mb-3">
-                                <a href="index.html" class="auth-logo">
+                                <a href="/" class="auth-logo">
                                     <img src="{{ asset('logo/logo.png') }}" height="20" class="mx-auto" alt="" style="height:45px">
                                 </a>
                             </div>

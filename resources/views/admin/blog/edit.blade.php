@@ -38,7 +38,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Add article</h4>
+                        <h4 class="card-title mb-5">Edit article</h4>
                         
                       
                         
@@ -89,6 +89,17 @@
                                     @error('title')
                                         <span class="text-danger"> {{ $message }} </span>
                                     @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">
+                                    Author
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-select">
+                                        <option>{{$blogs->authors->name}} {{$blogs->authors->surname}}</option>
+                                    </select>
                                 </div>
                             </div>
 

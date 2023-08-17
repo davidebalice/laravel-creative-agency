@@ -44,7 +44,9 @@
                             @csrf
                                 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Date</label>
+                                <label class="col-sm-2 col-form-label">
+                                    Date
+                                </label>
                                 <div class="col-sm-10">
                                 <div class="input-group" id="datepicker2">
                                     <input type="text" class="form-control" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
@@ -59,7 +61,9 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Category</label>
+                                <label class="col-sm-2 col-form-label">
+                                    Category
+                                </label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="category_id">
                                         <option value=""> - Category - </option>
@@ -85,6 +89,17 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">
+                                    Author
+                                </label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" name="user_id">
+                                        <option value="{{$user->id}}">{{$user->name}} {{$user->surname}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                              
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
                                     Tags

@@ -19,6 +19,13 @@ return new class extends Migration
             $table->string('name')->nullable;
             $table->string('image')->nullable;
             $table->text('description')->nullable;
+            $table->string('link')->nullable;
+            $table->string('date')->nullable;
+            $table->string('client')->nullable;
+            $table->string('facebook')->nullable;
+            $table->string('youtube')->nullable;
+            $table->string('linkedin')->nullable;
+            $table->string('twitter')->nullable;
             $table->integer('active')->default(1);
             $table->integer('position')->default(1);
             $table->timestamps();

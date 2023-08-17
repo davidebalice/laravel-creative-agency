@@ -5,15 +5,20 @@
 Portfolio
 @endsection
 
-<section class="breadcrumb__wrap">
-    <div class="container custom-container" >
+@if(file_exists(public_path($pagebanner->portfolio)))
+    <section class="breadcrumb__wrap backgroundBanner" style="background: url('{{ asset($pagebanner->portfolio) }}');">
+@else
+    <section class="breadcrumb__wrap">
+@endif
+    <div class="container custom-container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
                 <div class="breadcrumb__wrap__content">
-                    <h2 class="title">Case Details</h2>
+                    <h2 class="title">Portfolio</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/portfolio">Portfolio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Details</li>
                         </ol>
                     </nav>
@@ -21,18 +26,7 @@ Portfolio
             </div>
         </div>
     </div>
-    <div class="breadcrumb__wrap__icon">
-        <ul>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon01.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon02.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon03.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon04.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon05.png') }}" alt=""></li>
-            <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon06.png') }}" alt=""></li>
-        </ul>
-    </div>
 </section>
-
 
 <section class="services__details">
     <div class="container">
@@ -50,43 +44,19 @@ Portfolio
             </div>
             <div class="col-lg-4">
                 <aside class="services__sidebar">
-                    <div class="widget">
-                        <h5 class="title">Get in Touch</h5>
-                        <form action="#" class="sidebar__contact">
-                            <input type="text" placeholder="Enter name*">
-                            <input type="email" placeholder="Enter your mail*">
-                            <textarea name="message" id="message" placeholder="Massage*"></textarea>
-                            <button type="submit" class="btn">send massage</button>
-                        </form>
-                    </div>
+                   
                     <div class="widget">
                         <h5 class="title">Project Information</h5>
                         <ul class="sidebar__contact__info">
-                            <li><span>Date :</span> January, 2021</li>
-                            <li><span>Location :</span> East Meadow NY 11554</li>
-                            <li><span>Client :</span> American</li>
-                            <li class="cagegory"><span>Category :</span>
-                                <a href="portfolio.html">Photo,</a>
-                                <a href="portfolio.html">UI/UX</a>
-                            </li>
-                            <li><span>Project Link :</span> <a href="portfolio-details.html">https://www.yournews.com/</a></li>
-                        </ul>
-                    </div>
-                    <div class="widget">
-                        <h5 class="title">Contact Information</h5>
-                        <ul class="sidebar__contact__info">
-                            <li><span>Address :</span> 8638 Amarica Stranfod, <br> Mailbon Star</li>
-                            <li><span>Mail :</span> yourmail@gmail.com</li>
-                            <li><span>Phone :</span> +7464 0187 3535 645</li>
-                            <li><span>Fax id :</span> +9 659459 49594</li>
+                            <li><span>Date:</span> {{ $portfolio->date}}</li>
+                            <li><span>Client:</span> {{ $portfolio->client}}</li>
+                            <li><span>Link :</span> <a href="https://{{ $portfolio->link}}" target="_blank">{{ $portfolio->link}}</a></li>
                         </ul>
                         <ul class="sidebar__contact__social">
-                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="{{ $portfolio->linkedin}}"><i class="fab fa-linkedin" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $portfolio->facebook}}"><i class="fab fa-facebook" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $portfolio->youtube}}"><i class="fab fa-youtube" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $portfolio->twitter}}"><i class="fab fa-twitter" style="font-size:24px"></i></a></li>
                         </ul>
                     </div>
                 </aside>
