@@ -5,7 +5,6 @@
 <div class="page-content">
     <div class="container-fluid">
 
-       
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -58,6 +57,28 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
+                                  Skills
+                                </label>
+                                <div class="col-sm-10">
+                                    <textarea name="skills" class="form-control" rows="5" id="elm3">{{ $aboutpage->skills }}</textarea>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
+                                   Awards
+                                </label>
+                                <div class="col-sm-10">
+                                    <textarea name="awards" class="form-control" rows="5" id="elm4">{{ $aboutpage->awards }}</textarea>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
                                    About image
                                 </label>
                                 <div class="col-sm-10">
@@ -80,10 +101,6 @@
                                 &nbsp;Save
                             </a>
                         </form>
-
-                        
-                       
-
 
                     </div>
                 </div>

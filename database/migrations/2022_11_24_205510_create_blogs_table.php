@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('image')->nullable;
             $table->string('tags')->nullable;
             $table->text('description')->nullable;
+            $table->integer('active')->default(1);
+            $table->integer('position')->default(1);
             $table->timestamps();
         });
     }

@@ -3959,3 +3959,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     border-color: #d1d1d1 !important;
     color: #333 !important;
 }
+.loginData {
+    border: 1px dashed #ccc;
+    width: 94%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 12px;
+}

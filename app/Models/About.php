@@ -16,6 +16,8 @@ class About extends Model
         'short_title',
         'short_description',
         'long_description',
+        'skills',
+        'awards',
         'about_image'
     ];
 }

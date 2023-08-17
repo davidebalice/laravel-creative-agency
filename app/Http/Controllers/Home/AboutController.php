@@ -23,7 +23,7 @@ class AboutController extends Controller
         if($request->file('about_image')) {
             $image = $request->file('about_image');
             $name_gen = hexdec(uniqid()).'.'. $image->getClientOriginalExtension();
-            Image::make($image)->resize(523,605)->save('upload/about/'.$name_gen);
+            Image::make($image)->resize(800, null, function ($constraint) {$constraint->aspectRatio();})->save('upload/about/'.$name_gen);
             $save_url = 'upload/about/'.$name_gen;
 
             About::findOrFail($about_id)->update([
@@ -31,6 +31,8 @@ class AboutController extends Controller
                 'short_title' => $request->short_title,
                 'short_description' => $request->short_description,
                 'long_description' => $request->long_description,
+                'skills' => $request->skills,
+                'awards' => $request->awards,
                 'about_image' => $save_url
             ]);
 
@@ -40,11 +42,14 @@ class AboutController extends Controller
             );
         } 
         else {
+            dd($request->skills);
             About::findOrFail($about_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
                 'short_description' => $request->short_description,
-                'long_description' => $request->long_description
+                'long_description' => $request->long_description,
+                'skills' => $request->skills,
+                'awards' => $request->awards
             ]);
 
             $notification = array(
@@ -68,7 +73,10 @@ class AboutController extends Controller
         foreach($image as $gallery) {
             $name_gen = hexdec(uniqid()).'.'. $gallery->getClientOriginalExtension();
 
-            Image::make($gallery)->resize(220,220)->save('upload/gallery/'.$name_gen);
+            Image::make($gallery)->resize(500, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save('upload/gallery/'.$name_gen);
+
             $save_url = 'upload/gallery/'.$name_gen;
             MultiImage::insert([
                 'gallery' => $save_url,
@@ -87,8 +95,8 @@ class AboutController extends Controller
     }
 
     public function Gallery (){
-        $allMultiImage = MultiImage::all();
-        return view('admin.about_page.gallery',compact('allMultiImage'));
+        $gallery = MultiImage::all();
+        return view('admin.about_page.gallery',compact('gallery'));
     }
 
     public function Edit ($id){

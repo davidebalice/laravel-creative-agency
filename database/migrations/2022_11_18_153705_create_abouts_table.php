@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('short_title')->nullable;
             $table->text('short_description')->nullable;
             $table->text('long_description')->nullable;
+            $table->text('skills')->nullable;
+            $table->text('awards')->nullable;
             $table->string('about_image')->nullable;
             $table->timestamps();
         });

@@ -19,15 +19,12 @@
             <div class="col-xl-3">
                 <div class="services__item">
                     <div class="services__thumb">
-                        <a href="services-details.html">
+                        <a href="#">
                             <img src="{{ asset($item->photo)}}" alt="">
                         </a>
                     </div>
                     <div class="services__content">
-                        <div class="services__icon">
-                            <img src="{{ asset($item->icon)}}" alt="">
-                        </div>
-                        <h3 class="title">
+                        <h3 class="title mt-2">
                             {{ $item->title }}
                         </h3>
                         {!! $item->description !!}

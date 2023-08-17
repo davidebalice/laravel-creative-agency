@@ -48,12 +48,12 @@
                                         </thead>
 
                                         <tbody>
-                                        @php
+                                       
+                                       @php
                                             $i=1;
                                             $class_row="even";
                                             $totRecords = count($blogcategory)
                                         @endphp
-
 
                                         @if ($totRecords==0)
                                         <tr>
@@ -108,7 +108,6 @@
                                                       <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
                                                     </a>
                                                     @endif
-                          
                           
                                                     @if ($item->position==$totRecords)
                                                     <a href="#" class="btn btn-success btn-sm button_disable">

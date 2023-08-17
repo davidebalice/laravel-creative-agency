@@ -4,7 +4,7 @@
 @endphp
 
 <section id="aboutSection" class="about">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <ul class="about__icons__wrap">
@@ -14,23 +14,16 @@
             <div class="col-lg-6">
                 <div class="about__content">
                     <div class="section__title">
-                        <h2 class="title mobileWhite">
+                        <h2 class="title mobileWhite wow fadeInUp" data-wow-delay=".2s">
                             {{ $about->title }}
                         </h2>
                     </div>
                     <div class="about__exp">
-                        <div class="about__exp__icon">
-                            <img src="{{ asset('frontend/assets/img/icons/about_icon.png')}}" alt="">
-                        </div>
-                        <div class="about__exp__content mobileWhite">
-                            <p class="mobileWhite"> {{ $about->short_title }}</p>
+                        <div class="about__exp__content mobileWhite wow fadeInUp">
+                            <p class="mobileWhite" data-wow-delay=".3s"> {{ $about->short_title }}</p>
                         </div>
                     </div>
-                    <p class="desc mb-2 mobileWhite">{!! $about->short_description !!}</p>
-                   
-                    <div class="banner__video mt-3">
-                        <a href="{{ $homeslide->video_url }}" class="popup-video"><i class="fas fa-play"></i></a>
-                    </div>
+                    <p class="desc mb-2 mobileWhite wow fadeInUp" data-wow-delay=".4s">{!! $about->short_description !!}</p>
                 </div>
             </div>
         </div>

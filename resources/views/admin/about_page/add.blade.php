@@ -11,20 +11,17 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Multi image</h4>
+                        <h4 class="card-title mb-5">Gallery</h4>
                         
                         <form id="frm_about" method="post" action="{{ route('store.gallery')}}" enctype="multipart/form-data">
                             @csrf
                             
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   About image
+                                   About gallery (multi select)
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="gallery[]" id="gallery"  class="form-control" type="file" multiple="">
-                                    <div class="rounded avatar-xl mt-4 overflow-hidden" style="width:12rem;height:12rem">
-                                        <img id="showImage" class="h-100 w-auto justify-content-center" src="{{ url('upload/no_image.jpg') }}" alt="gallery">                                   
-                                    </div>
                                 </div>
                             </div>
 

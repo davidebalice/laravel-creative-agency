@@ -28,7 +28,20 @@
                         </div>
     
                         <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
-    
+
+                        @if (env('DEMO_MODE'))
+                            <div class="loginData">
+                                <b>Demo data</b>:
+                                <p>
+                                    Email: mario@rossi.it
+                                </p>
+                                <p>
+                                    Password: 12345678
+                                </p>
+                            </div>
+                        @endif
+                           
+
                         <div class="p-3">
                             
                             <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -39,7 +52,7 @@
                                 <!-- Email  -->
                                 <div>
                                     <x-input-label for="email" :value="__('Email')" />
-                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" value="mario@rossi.it" required autofocus />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                                 

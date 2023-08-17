@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Demo personal site with Portfolio and Blog developed in Laravel
+Demo creative agency site with Portfolio and Blog - developed in Laravel
 @endsection
 
 @include('frontend.home.slide')
@@ -11,8 +11,5 @@ Demo personal site with Portfolio and Blog developed in Laravel
 @include('frontend.home.portfolio')
 @include('frontend.home.partners')
 @include('frontend.home.blog')
-@php
-    //@include('frontend.home.contact')
-@endphp
 
 @endsection

@@ -39,7 +39,7 @@
                                             $i=1;
                                             $class_row="even";
                                         @endphp
-                                        @foreach ($allMultiImage as $image) 
+                                        @foreach ($gallery as $image) 
                                             @php
                                                 $i++
                                             @endphp
@@ -54,7 +54,7 @@
                                             @endif
                                             <tr class="{{ $class_row }}">
                                                 <td class="sorting_1 dtr-control">{{ $image->id }}</td>
-                                                <td><img src="{{ asset($image->multi_image) }}" style="width:120px;height:auto;border:1px solid #ccc"></td>
+                                                <td><img src="{{ asset($image->gallery) }}" style="width:150px;height:auto !important;border:1px solid #ccc"></td>
                                                 <td>
                                                     <a href="{{ route('edit.gallery',$image->id) }}" class="btn btn-info sm" title="Edit data">
                                                         <i class="fas fa-edit"></i> Edit

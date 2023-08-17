@@ -2725,6 +2725,7 @@ label {
 .about {
     position: relative;
     padding: 200px 0 200px;
+    margin: 0 auto;
 }
 @media (max-width: 991.98px) {
     .about {
@@ -2942,15 +2943,18 @@ label {
 }
 .about__content {
     margin-left: 100px;
+    width: 80%;
 }
 @media (max-width: 1199.98px) {
     .about__content {
         margin-left: 30px;
+        width: 100%;
     }
 }
 @media (max-width: 991.98px) {
     .about__content {
         margin-left: 0;
+        width: 100%;
     }
 }
 .about__content .section__title {
@@ -3060,10 +3064,13 @@ label {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    right: 0;
+    bottom: -10px;
     width: 100%;
-    height: 4px;
+    height: 3px;
+    color: #fcaf17;
     background: #fcaf17;
+    margin: 0 auto;
     opacity: 0;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
@@ -3379,7 +3386,10 @@ label {
 }
 .services__content {
     border: 2px solid #f7f7f7;
-    padding: 30px 38px 45px;
+    padding: 30px;
+}
+.services__content2 {
+    padding: 30px;
 }
 @media (max-width: 767.98px) {
     .services__content {
@@ -4000,14 +4010,18 @@ label {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -23px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 7px 14px 7px;
-    border-color: transparent transparent #fcaf17 transparent;
+    bottom: -12px;
+    width: 26px;
+    height: 3px;
+    color: #fcaf17;
+    background: #fcaf17;
     margin: 0 auto;
     opacity: 0;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
 }
 @media (max-width: 991.98px) {
     .portfolio__nav li .nav-link::after {
@@ -4405,16 +4419,15 @@ label {
     }
 }
 
-/*=============================
-08. Partner
-=============================*/
 .partner {
     position: relative;
     padding: 100px 0 130px;
+    margin: 0 auto;
 }
 @media (max-width: 991.98px) {
     .partner {
         padding: 120px 0 120px;
+        width: 100% !important;
     }
 }
 .partner::before {
@@ -4604,15 +4617,18 @@ label {
 }
 .partner__content {
     margin-left: 85px;
+    width: 80% !important;
 }
 @media (max-width: 1199.98px) {
     .partner__content {
         margin-left: 30px;
+        width: 100%;
     }
 }
 @media (max-width: 991.98px) {
     .partner__content {
         margin-left: 0;
+        width: 100%;
     }
 }
 .partner__content .section__title {
@@ -4663,9 +4679,6 @@ label {
     transform: translate(0, 0);
 }
 
-/*=============================
-09. Testimonial
-=============================*/
 .testimonial {
     position: relative;
     padding: 130px 0 0;
@@ -6847,4 +6860,9 @@ body.active-dark-mode p {
     display: flex;
     gap: 10px !important;
     justify-content: start !important;
+}
+
+#gallerySection {
+    gap: 20px;
+    padding: 20px;
 }

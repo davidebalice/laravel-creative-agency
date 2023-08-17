@@ -194,8 +194,7 @@
             function (e) {
                 t(e.target.id);
             }
-        ),
-        Waves.init();
+        );
 })(jQuery);
 
 function initializeSwitches(model) {
@@ -210,9 +209,7 @@ function initializeSwitches(model) {
 }
 
 function getCsrfToken() {
-    const csrfTokenMeta = document.querySelector(
-        'meta[name="csrf-token"]'
-    );
+    const csrfTokenMeta = document.querySelector('meta[name="csrf-token"]');
     if (csrfTokenMeta) {
         return csrfTokenMeta.content;
     }
