@@ -8,10 +8,23 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
-
+use App\Models\Portfolio;
+use App\Models\Blog;
+use Carbon\Carbon;
 class AdminController extends Controller
 {
-    public function destroy(Request $request)
+    public function Dashboard(){
+        $portfolio = Portfolio::orderby('position','ASC')->paginate(6);
+        $blogs = Blog::orderby('created_at','DESC')->paginate(6);
+        foreach ($blogs as $item) {
+            $item->formatted_created_at = isset($item->created_at)
+                ? Carbon::parse($item->created_at)->format('d/m/Y')
+                : 'None';
+        }
+        return view('admin.index',compact('portfolio','blogs'));
+    }
+
+    public function Destroy(Request $request)
     {
         Auth::guard('web')->logout();
 

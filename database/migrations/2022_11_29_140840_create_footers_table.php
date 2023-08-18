@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable;
             $table->string('number')->nullable;
             $table->text('short_description')->nullable;
             $table->text('short_description2')->nullable;

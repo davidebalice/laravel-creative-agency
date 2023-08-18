@@ -17,21 +17,8 @@ class FooterController extends Controller
         
         $id = $request->id;
        
-        /*
-        $request->validate([
-            'category_id' => 'required',
-            'title' => 'required',
-            'tags' => 'required',
-            'description' => 'required'
-        ],[
-            'category_id.required' => 'Category is required',
-            'title.required' => 'Title is required',
-            'tags.required' => 'Tags is required',
-            'description.required' => 'Description is required'
-        ]);
-        */
-
         Footer::findOrFail($id)->update([
+            'name' => $request->name,
             'number' => $request->number,
             'address' => $request->address,
             'city' => $request->city,

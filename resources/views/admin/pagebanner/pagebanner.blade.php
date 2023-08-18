@@ -30,7 +30,6 @@
 
                         <hr />
 
-
                         @foreach(['about', 'portfolio', 'blog', 'contact', 'service'] as $term)
                             <h5 class="card-title mb-3  mt-5">Page: <b>{{ ucfirst($term) }}</b></h5>
                             <form id="frm_{{ $term }}" method="post" action="{{ route('update.page.banner') }}" enctype="multipart/form-data">

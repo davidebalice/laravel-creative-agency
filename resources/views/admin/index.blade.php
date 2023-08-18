@@ -93,35 +93,52 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Status</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th style="width: 120px;">Salary</th>
-                                    </tr>
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Portfolio name</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>
                                 </thead>
 
                                 <tbody>
+                                @php
+                                    $i=1;
+                                    $class_row="even";
+                                    $totRecords = count($portfolio);
+                                @endphp
+
+                              
+                                @if ($totRecords==0)
                                     <tr>
-                                        <td><h6 class="mb-0">Charles Casey</h6></td>
-                                        <td>Web Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                        <td colspan="5">
+                                            <h5 class="py-5 pl-4">No result</h5>
                                         </td>
-                                        <td>
-                                            23
-                                        </td>
-                                        <td>
-                                            04 Apr, 2021
-                                        </td>
-                                        <td>$42,450</td>
                                     </tr>
+                                @endif    
+
+                                @foreach ($portfolio as $item) 
+                                    @php
+                                        $i++
+                                    @endphp
+                                    @if($i % 2 == 0)
+                                        @php
+                                            $class_row="even";
+                                        @endphp
+                                    @else
+                                        @php
+                                            $class_row="odd";
+                                        @endphp
+                                    @endif
+                                    <tr class="{{ $class_row }}">
+                                        <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"
+                                            onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->title }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
-                            </table> 
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -147,35 +164,46 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Status</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th style="width: 120px;">Salary</th>
-                                    </tr>
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Date</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Category</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>                                            
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Tags</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td><h6 class="mb-0">Charles Casey</h6></td>
-                                        <td>Web Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            23
-                                        </td>
-                                        <td>
-                                            04 Apr, 2021
-                                        </td>
-                                        <td>$42,450</td>
+                                @php
+                                    $i=1;
+                                    $class_row="even";
+                                @endphp
+                                @foreach ($blogs as $item) 
+                                    @php
+                                        $i++
+                                    @endphp
+                                    @if($i % 2 == 0)
+                                        @php
+                                            $class_row="even";
+                                        @endphp
+                                    @else
+                                        @php
+                                            $class_row="odd";
+                                        @endphp
+                                    @endif
+                                    <tr class="{{ $class_row }}">
+                                        <td><img src="{{ asset($item->image) }}" style="width:120px;height:auto;border:1px solid #ccc"
+                                            onerror="this.src='{{ asset('upload/no_image.jpg') }}'"></td>
+                                        <td>{{$item->formatted_created_at ?? 'None' }}</td>
+                                        <td>{{$item->categories->category  ?? 'None'}}</td>
+                                        <td>{{ $item->title }}</td>
+                                        <td>{{ $item->tags }}</td>
                                     </tr>
+                                @endforeach
                                 </tbody>
-                            </table> 
+                            </table>
                         </div>
                     </div>
                 </div>

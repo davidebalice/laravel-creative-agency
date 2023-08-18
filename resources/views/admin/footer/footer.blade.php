@@ -21,6 +21,15 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
+                                    Company name
+                                </label>
+                                <div class="col-sm-10">
+                                    <input name="name" class="form-control" type="text" id="example-text-input" value="{{ $footer->name }}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">
                                     Number
                                 </label>
                                 <div class="col-sm-10">

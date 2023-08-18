@@ -78,8 +78,8 @@ Contact
                         <img src="assets/img/icons/contact_icon01.png" alt="">
                     </div>
                     <div class="contact__info__content">
-                        <h4 class="title">address line</h4>
-                        <span>Bowery St, New York, <br> NY 10013,USA</span>
+                        <h4 class="title">{{ $footer->name }}</h4>
+                        <span>{{ $footer->address }} <br> {{ $footer->city }}</span>
                     </div>
                 </div>
             </div>
@@ -89,24 +89,21 @@ Contact
                         <img src="assets/img/icons/contact_icon02.png" alt="">
                     </div>
                     <div class="contact__info__content">
-                        <h4 class="title">Phone Number</h4>
-                        <span>+1255 - 568 - 6523</span>
-                        <span>+1255 - 568 - 6523</span>
+                        <h4 class="title">Contact</h4>
+                        <span>{{ $footer->number }}</span>
+                        <span><a href="mailto:{{ $footer->email }}" class="mail">{{ $footer->email }}</a></span>
+                    </div>
+                    <div class="footer__widget__social">
+                        <ul class="footer__social__list" style="justify-content: center">
+                            <li><a href="{{ $footer->linkedin}}"><i class="fab fa-linkedin" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $footer->facebook}}"><i class="fab fa-facebook" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $footer->instagram}}"><i class="fab fa-instagram" style="font-size:24px"></i></a></li>
+                            <li><a href="{{ $footer->twitter}}"><i class="fab fa-twitter" style="font-size:24px"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="contact__info">
-                    <div class="contact__info__icon">
-                        <img src="assets/img/icons/contact_icon03.png" alt="">
-                    </div>
-                    <div class="contact__info__content">
-                        <h4 class="title">Mail Address</h4>
-                        <span>email@example.com</span>
-                        <span>info@yourdomain.com</span>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

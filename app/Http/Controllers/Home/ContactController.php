@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\PageBanner;
 use Carbon\Carbon;
-
+use App\Models\Footer;
 class ContactController extends Controller
 {
     public function Contact(){
         $pagebanner = PageBanner::find(1);
-        return view('frontend.contact',compact('pagebanner'));
+        $footer = Footer::find(1);
+        return view('frontend.contact',compact('pagebanner','footer'));
     }
    
     public function StoreMessage(Request $request){
