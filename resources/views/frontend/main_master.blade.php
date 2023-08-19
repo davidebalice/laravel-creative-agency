@@ -20,7 +20,7 @@
     <body>
 
         <div id="preloader">
-            <div class="rasalina-spin-box"></div>
+            <div class="spin-box"></div>
         </div>
 
         <button class="scroll-top scroll-to-target" data-target="html">

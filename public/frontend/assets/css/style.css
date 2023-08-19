@@ -6389,7 +6389,7 @@ label {
     align-items: center;
 }
 
-.rasalina-spin-box {
+.spin-box {
     position: absolute;
     margin: auto;
     left: 0;
@@ -6409,14 +6409,14 @@ label {
         -15px -15px #0054ff, 15px -15px #fcaf17;
     -moz-box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
         15px -15px #fcaf17;
-    animation: rasalina-spin ease infinite 4.6s;
-    -o-animation: rasalina-spin ease infinite 4.6s;
-    -ms-animation: rasalina-spin ease infinite 4.6s;
-    -webkit-animation: rasalina-spin ease infinite 4.6s;
-    -moz-animation: rasalina-spin ease infinite 4.6s;
+    animation: spin ease infinite 4.6s;
+    -o-animation: spin ease infinite 4.6s;
+    -ms-animation: spin ease infinite 4.6s;
+    -webkit-animation: spin ease infinite 4.6s;
+    -moz-animation: spin ease infinite 4.6s;
 }
 
-@keyframes rasalina-spin {
+@keyframes spin {
     0%,
     100% {
         box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
@@ -6436,7 +6436,7 @@ label {
     }
 }
 
-@-o-keyframes rasalina-spin {
+@-o-keyframes spin {
     0%,
     100% {
         box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
@@ -6456,7 +6456,7 @@ label {
     }
 }
 
-@-ms-keyframes rasalina-spin {
+@-ms-keyframes spin {
     0%,
     100% {
         box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
@@ -6476,7 +6476,7 @@ label {
     }
 }
 
-@-webkit-keyframes rasalina-spin {
+@-webkit-keyframes spin {
     0%,
     100% {
         box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
@@ -6496,7 +6496,7 @@ label {
     }
 }
 
-@-moz-keyframes rasalina-spin {
+@-moz-keyframes spin {
     0%,
     100% {
         box-shadow: 15px 15px #0054ff, -15px 15px #fcaf17, -15px -15px #0054ff,
