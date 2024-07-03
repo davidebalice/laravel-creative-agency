@@ -10,6 +10,30 @@
         <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/toastr.css?d=2') }}" >
+        <style>
+            .loginInput{
+                border:1px solid #ddd;
+                width: 100%;
+                padding:6px;
+                border-radius: 4px;
+                background: #f1f1f1;
+                box-shadow: 0px 0px 3px 0px rgb(0, 0, 0,0.16) inset;
+            }
+
+            .loginButton{
+                border:1px solid #ddd;
+                width: 100%;
+                text-align: center;
+                padding:6px;
+                border-radius: 4px;
+                background: #de564f;
+                box-shadow: 0px 0px 3px 0px rgb(0, 0, 0,0.16);
+            }
+            .loginButton:hover{
+                background: #bc3b3b;
+            }
+            
+        </style>
     </head>
 
     <body class="auth-body-bg">
@@ -52,7 +76,8 @@
                                 <!-- Email  -->
                                 <div>
                                     <x-input-label for="email" :value="__('Email')" />
-                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" value="mario@rossi.it" required autofocus />
+                                    <br />
+                                    <x-text-input id="email" class="block mt-1 w-full loginInput" type="email" name="email" value="mario@rossi.it" required autofocus />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                                 
@@ -71,7 +96,8 @@
                                 <!-- Password -->
                                 <div class="mt-4">
                                     <x-input-label for="password" :value="__('Password')" />
-                                    <x-text-input id="password" class="block mt-1 w-full"
+                                    <br />
+                                    <x-text-input id="password" class="block mt-1 w-full loginInput"
                                                     type="password"
                                                     name="password"
                                                     required autocomplete="current-password" />
@@ -88,16 +114,25 @@
                                 </div>
 
                                 <div class="flex items-center justify-end mt-4">
+                                    
+
+                                    <x-primary-button class="ml-3 loginButton">
+                                        {{ __('Log in') }}
+                                    </x-primary-button>
+                                </div>
+
+                                <div class="flex items-center justify-end mt-4">
+                                    
                                     @if (Route::has('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                                             {{ __('Forgot your password?') }}
                                         </a>
                                     @endif
 
-                                    <x-primary-button class="ml-3">
-                                        {{ __('Log in') }}
-                                    </x-primary-button>
+                                   
                                 </div>
+
+                               
                             </form>
                         </div>
                     </div>
