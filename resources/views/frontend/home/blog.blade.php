@@ -14,11 +14,11 @@
             <div class="col-lg-4 col-md-6 col-sm-9">
                 <div class="blog__post__item">
                     <div class="blog__post__thumb">
-                        <a href="{{ route('blog.details',$item->id) }}">                         
+                        <a href="{{ route('blog.details',$item->id) }}">
                             @if (file_exists($item->image_home))
                             <img src="{{ asset($item->image_home)}}" alt="">
                             @else
-                            <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">                         
+                            <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">
                             @endif
                         </a>
                         <div class="blog__post__tags">

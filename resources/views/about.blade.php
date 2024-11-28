@@ -8,8 +8,8 @@
 </head>
 <body>
    <h1>
-        about page    
-    </h1> 
+        about page
+    </h1>
     <a href="{{ route('contact.page') }}">Contact</a>
 </body>
 </html>

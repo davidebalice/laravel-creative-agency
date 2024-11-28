@@ -11,7 +11,7 @@
                     <button class="btn btn-success addButton">
                         <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Back
+                            &nbsp;&nbsp;{{ __('messages.Back') }}
                         </div>
                     </button>
                 </a>
@@ -30,7 +30,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Category
+                                    {{ __('messages.Category') }}
                                 </label>
                                 <div class="form-group col-sm-10">
                                     <input name="category" class="form-control" type="text" id="example-text-input" value="{{old('category')}}">
@@ -42,7 +42,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Order
+                                    {{ __('messages.Order') }}
                                 </label>
                                 <div class="form-group col-sm-10">
                                     <input name="order" class="form-control" type="text" id="example-text-input" style="width:100px" value="1">
@@ -55,8 +55,8 @@
                             <hr />
 
                             <a href="#" onclick="$('#frm_category').submit()" class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-plus-circle"></i>               
-                                &nbsp;Insert
+                                <i class="fas fa-plus-circle"></i>
+                                &nbsp;{{ __('messages.Insert') }}
                             </a>
                         </form>
 

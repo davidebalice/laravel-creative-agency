@@ -24,7 +24,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
-                        <span>Page banner</span>
+                        <span>{{ __('messages.Pagebanner') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route ('page.banner') }}">Banner</a></li>
@@ -34,11 +34,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-account-box-fill"></i>
-                        <span>About</span>
+                        <span>{{ __('messages.About') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('about.page') }}">Options</a></li>               
-                        <li><a href="{{ route ('gallery') }}">Gallery</a></li>                  
+                        <li><a href="{{ route ('about.page') }}">Options</a></li>
+                        <li><a href="{{ route ('gallery') }}">Gallery</a></li>
                         <li><a href="{{ route ('add.gallery') }}">Upload</a></li>
                     </ul>
                 </li>
@@ -57,10 +57,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-lightbulb-flash-line"></i>
-                        <span>Services</span>
+                        <span>{{ __('messages.Services') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('admin.services') }}">Services</a></li>    
+                        <li><a href="{{ route ('admin.services') }}">{{ __('messages.Services') }}</a></li>    
                         <li><a href="{{ route ('services.add') }}">Add service</a></li>
                     </ul>
                 </li>
@@ -68,10 +68,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-menu-fill"></i>
-                        <span>Blog category</span>
+                        <span>{{ __('messages.BlogCategory') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('admin.blog.category') }}">Category</a></li>
+                        <li><a href="{{ route('admin.blog.category') }}">{{ __('messages.Category') }}</a></li>
                         <li><a href="{{ route('blog.category.add') }}">Add category</a></li>
                     </ul>
                 </li>

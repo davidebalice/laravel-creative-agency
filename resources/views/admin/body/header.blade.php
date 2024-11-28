@@ -68,7 +68,18 @@
                 </div>
                 */
             @endphp
-           
+
+
+
+            <div class="dropdown d-none d-lg-inline-block ms-1 flagMenu">
+                <a href="/lang/change?lang=it">
+                    <img src="{{"/backend/assets/images/it.png"}}" class="flag">
+                </a>
+                <a href="/lang/change?lang=en">
+                    <img src="{{"/backend/assets/images/en.png"}}" class="flag">
+                </a>
+            </div>
+     
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                     <i class="ri-fullscreen-line"></i>
@@ -105,7 +116,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>  
+                            </a>
                         @endforeach
                     </div>
                     <div class="p-2 border-top">

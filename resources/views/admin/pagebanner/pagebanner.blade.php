@@ -25,13 +25,12 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-0">Page banner</h4>
-                        <p>Upload of a header's page banner </p>
+                        <h4 class="card-title mb-0">{{ __('messages.Pagebanner') }}</h4>
 
                         <hr />
 
                         @foreach(['about', 'portfolio', 'blog', 'contact', 'service'] as $term)
-                            <h5 class="card-title mb-3  mt-5">Page: <b>{{ ucfirst($term) }}</b></h5>
+                            <h5 class="card-title mb-3  mt-5">{{ __('messages.Page') }}: <b>{{ ucfirst($term) }}</b></h5>
                             <form id="frm_{{ $term }}" method="post" action="{{ route('update.page.banner') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
@@ -46,8 +45,8 @@
                                     </div>
                                 </div>
                         
-                                <a href="#" onclick="$('#frm_{{ $term }}').submit()" class="btn btn-primary waves-effect waves-light">            
-                                    <i class="fas fa-save"></i>               
+                                <a href="#" onclick="$('#frm_{{ $term }}').submit()" class="btn btn-primary waves-effect waves-light">
+                                    <i class="fas fa-save"></i>
                                     &nbsp;Upload - {{ ucfirst($term) }}
                                 </a>
                             </form>

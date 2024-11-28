@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-About
+{{ __('messages.About') }}
 @endsection
 
 @php
@@ -20,11 +20,11 @@ About
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
                 <div class="breadcrumb__wrap__content">
-                    <h2 class="title">About</h2>
+                    <h2 class="title">{{ __('messages.About') }}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">About</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('messages.About') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -106,7 +106,7 @@ About
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="section__title text-center">
-                    <span class="sub-title">Services</span>
+                    <span class="sub-title">{{ __('messages.Services') }}</span>
                     <h2 class="title">Our service</h2>
                 </div>
             </div>

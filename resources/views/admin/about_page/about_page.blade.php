@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">About page</h4>
+                        <h4 class="card-title mb-5">{{ __('messages.About') }}</h4>
                         
                         <form id="frm_about" method="post" action="{{ route('update.about')}}" enctype="multipart/form-data">
                             @csrf

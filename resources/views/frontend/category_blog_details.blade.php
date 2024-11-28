@@ -40,7 +40,7 @@
                                 @if (file_exists($item->image_home))
                                 <img src="{{ asset($item->image_home)}}" alt="">
                                 @else
-                                <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">                         
+                                <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">
                                 @endif
                                 <a href="{{ route('blog.details',$item->id) }}" class="blog__link"><i class="far fa-long-arrow-right"></i></a>
                             </div>
@@ -72,10 +72,10 @@
             <div class="col-lg-4">
                 <aside class="blog__sidebar">
             
-                    @include('frontend.partials.form_blog_side')                  
-                    @include('frontend.partials.recent_blog_side')   
-                    @include('frontend.partials.category_blog_side')    
-                    @include('frontend.partials.tags_blog_side')   
+                    @include('frontend.partials.form_blog_side')
+                    @include('frontend.partials.recent_blog_side')
+                    @include('frontend.partials.category_blog_side')
+                    @include('frontend.partials.tags_blog_side')
 
                 </aside>
             </div>

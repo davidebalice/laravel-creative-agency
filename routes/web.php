@@ -12,6 +12,9 @@ use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\PageBannerController;
+use App\Http\Controllers\LangController;
+
+Route::get('/lang/{lang}', [LangController::class, 'change'])->name('changeLang');
 
 Route::controller(HomepageController::class)->group(function(){
     Route::get('/', 'Homepage')->name('index');

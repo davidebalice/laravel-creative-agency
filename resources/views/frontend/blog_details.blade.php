@@ -32,7 +32,7 @@ Blog
                         @if (file_exists($blogs->image_home))
                             <img src="{{ asset($blogs->image_home)}}" alt="">
                         @else
-                            <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">                         
+                            <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">
                         @endif
                     </div>
                     <div class="blog__details__content services__details__content">
@@ -79,10 +79,10 @@ Blog
             </div>
             <div class="col-lg-4">
                 <aside class="blog__sidebar">
-                    @include('frontend.partials.form_blog_side')                  
-                    @include('frontend.partials.recent_blog_side')   
-                    @include('frontend.partials.category_blog_side')    
-                    @include('frontend.partials.tags_blog_side')   
+                    @include('frontend.partials.form_blog_side')
+                    @include('frontend.partials.recent_blog_side')
+                    @include('frontend.partials.category_blog_side')
+                    @include('frontend.partials.tags_blog_side')
                 </aside>
             </div>
         </div>

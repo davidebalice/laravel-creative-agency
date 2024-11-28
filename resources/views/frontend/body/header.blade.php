@@ -25,20 +25,20 @@
                                     
                                     <li class="{{($route=='home.about') ? 'active' : ''}}">
                                         <a href="{{ route('home.about') }}">
-                                            About
+                                            {{ __('messages.About') }}
                                         </a>
                                     </li>
 
                                     <li class="{{($route=='portfolio') ? 'active' : ''}}">
                                         <a href="{{ route('portfolio') }}">
                                             Portfolio
-                                        </a>                                    
+                                        </a>
                                     </li>
 
                                     <li class="{{($route=='blog') ? 'active' : ''}}">
                                         <a href="{{ route('blog')}}">
                                             Blog
-                                        </a>    
+                                        </a>
                                     </li>
 
                                     <li class="{{($route=='contact') ? 'active' : ''}}">
@@ -48,6 +48,17 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            <div class="header__btn d-none d-md-block flagMenu">
+                                <a href="/lang/change?lang=it">
+                                    <img src="{{"/backend/assets/images/it.png"}}" class="flag">
+                                </a>
+                                <a href="/lang/change?lang=en">
+                                    <img src="{{"/backend/assets/images/en.png"}}" class="flag">
+                                </a>
+                            </div>
+
+
                             <div class="header__btn d-none d-md-block mainMenuBgDx">
                                 <a href="#" class="btn btnGitHub">
                                     <span class="fab  fa-github"></span>

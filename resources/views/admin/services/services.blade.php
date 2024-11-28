@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Services</h4>
+                    <h4 class="mb-sm-0">{{ __('messages.Services') }}</h4>
                 </div>
             </div>
         </div>
@@ -76,10 +76,10 @@
                                                     <h5 class="py-5 pl-4">No result</h5>
                                                 </td>
                                             </tr>
-                                        @endif            
+                                        @endif
 
 
-                                        @foreach ($services as $item) 
+                                        @foreach ($services as $item)
                                             @php
                                                 $i++
                                             @endphp

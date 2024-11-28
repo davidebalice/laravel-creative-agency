@@ -18,7 +18,7 @@
                            
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   About image
+                                   Image
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="gallery" id="gallery"  class="form-control" type="file">
@@ -30,13 +30,13 @@
 
                             <hr />
 
-                            <a href="/gallery"  class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-arrow-left"></i>               
+                            <a href="/gallery"  class="btn btn-primary waves-effect waves-light">
+                                <i class="fas fa-arrow-left"></i>
                                 &nbsp;Back
                             </a>
 
-                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-save"></i>               
+                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">
+                                <i class="fas fa-save"></i>
                                 &nbsp;Save
                             </a>
                         </form>

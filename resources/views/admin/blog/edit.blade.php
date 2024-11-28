@@ -66,10 +66,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Category</label>
+                                <label class="col-sm-2 col-form-label">{{ __('messages.Category') }}</label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="category_id" aria-label="Default select example">
-                                        <option selected="" value=""> - Category - </option>
+                                        <option selected="" value=""> - {{ __('messages.Category') }} - </option>
                                         @foreach ($categories as $item)
                                         <option value="{{$item->id}}" {{ $item->id == $blogs->category_id ? 'selected' : ''}} >{{$item->category}}</option>
                                         @endforeach

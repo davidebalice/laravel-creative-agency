@@ -62,11 +62,11 @@
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">
-                                    Category
+                                    {{ __('messages.Category') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <select class="form-select" name="category_id">
-                                        <option value=""> - Category - </option>
+                                        <option value=""> - {{ __('messages.Category') }} - </option>
                                         @foreach ($categories as $item)
                                         <option value="{{$item->id}}" {{ $item->id == old('category_id') ? 'selected' : ''}} >{{$item->category}}</option>
                                         @endforeach

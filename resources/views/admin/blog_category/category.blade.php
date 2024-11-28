@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Blog category</h4>
+                    <h4 class="mb-sm-0">{{ __('messages.BlogCategory') }}</h4>
                 </div>
             </div>
         </div>
@@ -42,9 +42,9 @@
                                         <thead>
                                         <tr role="row">
                                             <th style="width: 54px;" >Publish</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 464px;" aria-label="Position: activate to sort column ascending">Category</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 120px;" aria-label="Position: activate to sort column ascending">Order</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 464px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Category') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 120px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Order') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">{{ __('messages.Action') }}</th>
                                         </thead>
 
                                         <tbody>
