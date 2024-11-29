@@ -61,7 +61,7 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button"
-                                role="tab" aria-controls="about" aria-selected="true">About</button>
+                                role="tab" aria-controls="about" aria-selected="true">{{ __('messages.About') }}</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button"
@@ -69,7 +69,7 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="awards-tab" data-bs-toggle="tab" data-bs-target="#awards" type="button"
-                                role="tab" aria-controls="awards" aria-selected="false">awards</button>
+                                role="tab" aria-controls="awards" aria-selected="false">Awards</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -97,7 +97,7 @@
             <div class="col-lg-3">
                 <img class="w-100" src="{{ asset($item->gallery)}}">
             </div>
-        @endforeach  
+        @endforeach
     </div>
 </section>
 
@@ -106,8 +106,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="section__title text-center">
-                    <span class="sub-title">{{ __('messages.Services') }}</span>
-                    <h2 class="title">Our service</h2>
+                    <h2 class="title">{{ __('messages.Services') }}</h2>
                 </div>
             </div>
         </div>

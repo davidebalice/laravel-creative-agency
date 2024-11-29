@@ -6850,16 +6850,29 @@ body.active-dark-mode p {
     font-size: 42px !important;
 }
 
+.slideText3 {
+    font-size: 28px !important;
+}
+
 @media (max-width: 991.98px) {
     .slideText2 {
         font-size: 28px !important;
     }
+    .slideText2 {
+        font-size: 23px !important;
+    }
+}
+
+.slideHomeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .laravelHome {
-    width: 28%;
+    width: 20%;
     max-width: 200px;
-    margin-top: 40px;
 }
 
 .btnGitHub {

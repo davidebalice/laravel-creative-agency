@@ -22,8 +22,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <h4 class="card-title mb-5">Add blog category</h4>
+                        <h4 class="card-title mb-5">{{ __('messages.Addcategory') }}</h4>
                      
                         <form id="frm_category" method="post" action="{{ route('blog.category.store')}}" enctype="multipart/form-data">
                             @csrf
@@ -54,7 +53,7 @@
                                
                             <hr />
 
-                            <a href="#" onclick="$('#frm_category').submit()" class="btn btn-primary waves-effect waves-light">            
+                            <a href="#" onclick="$('#frm_category').submit()" class="btn btn-primary waves-effect waves-light">
                                 <i class="fas fa-plus-circle"></i>
                                 &nbsp;{{ __('messages.Insert') }}
                             </a>
@@ -99,5 +98,5 @@ $(document).ready(function(){
     },
    });
 });
-</script>    
+</script>
 @endsection

@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Edit category</h4>
+                        <h4 class="card-title mb-5">{{ __('messages.Editcategory') }}</h4>
 
                         <input type="hidden" name="id" value="{{ $blogcategory->id }}">
                         

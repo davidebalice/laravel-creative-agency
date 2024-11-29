@@ -12,7 +12,7 @@
 
                     <div class="rounded-circle avatar-xl mt-4 overflow-hidden" style="width:12rem;height:12rem">
                          <img id="showImage" class="h-100 w-auto justify-content-center" src="{{ (!empty($adminData->profile_image)) ? url('upload/admin/'.$adminData->profile_image) : url('upload/no_image.jpg') }}" alt="profile">                                   
-                    </div>           
+                    </div>
 
                     </center>
                     <div class="card-body">
@@ -23,11 +23,10 @@
                             Email: {{$adminData->email}}
                         </p>
                         <hr />
-                        <a href="{{ route('edit.profile') }}" class="btn btn-primary waves-effect waves-light">            
-                            <i class="fas fa-edit"></i>               
-                            Edit profile
+                        <a href="{{ route('edit.profile') }}" class="btn btn-primary waves-effect waves-light">
+                            <i class="fas fa-edit"></i>
+                            {{ __('messages.Edit') }} {{ __('messages.profile') }}
                         </a>
-
                     </div>
                 </div>
             </div>

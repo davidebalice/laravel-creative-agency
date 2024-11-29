@@ -11,7 +11,7 @@
                             {{ $categoryname->category }}
                         @else
                             Blog
-                        @endisset 
+                        @endisset
                     </h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -31,7 +31,7 @@
             <div class="col-lg-8">
                 
                 @if ($blogpost->count() === 0)
-                    <p>No results</p>
+                    <p>{{ __('messages.Noresult') }}</p>
                 @else
                     @foreach ($blogpost as $item)
                         
@@ -47,7 +47,7 @@
                             <div class="standard__blog__content">
                                 <div class="blog__post__avatar">
                                     <div class="thumb"><img src="assets/img/blog/blog_avatar.png" alt=""></div>
-                                    <span class="post__by">By : <a href="#">Halina Spond</a></span>
+                                    <span class="post__by"><a href="#">Halina Spond</a></span>
                                 </div>
                                 <h2 class="title"><a href="{{ route('blog.details',$item->id) }}">{{ $item->title }}</a></h2>
                                 

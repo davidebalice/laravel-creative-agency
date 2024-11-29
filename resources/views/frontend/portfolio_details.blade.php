@@ -19,7 +19,7 @@ Portfolio
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="/portfolio">Portfolio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Details</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('messages.Details') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -46,10 +46,10 @@ Portfolio
                 <aside class="services__sidebar">
                    
                     <div class="widget">
-                        <h5 class="title">Project Information</h5>
+                        <h5 class="title">Info</h5>
                         <ul class="sidebar__contact__info">
-                            <li><span>Date:</span> {{ $portfolio->date}}</li>
-                            <li><span>Client:</span> {{ $portfolio->client}}</li>
+                            <li><span>{{ __('messages.Date') }}:</span> {{ $portfolio->date}}</li>
+                            <li><span>{{ __('messages.Client') }}:</span> {{ $portfolio->client}}</li>
                             <li><span>Link :</span> <a href="https://{{ $portfolio->link}}" target="_blank">{{ $portfolio->link}}</a></li>
                         </ul>
                         <ul class="sidebar__contact__social">

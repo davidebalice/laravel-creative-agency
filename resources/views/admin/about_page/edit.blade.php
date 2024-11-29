@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Update multi image</h4>
+                        <h4 class="card-title mb-5">Gallery</h4>
                         
                         <form id="frm_about" method="post" action="{{ route('update.gallery')}}" enctype="multipart/form-data">
                             @csrf
@@ -18,7 +18,7 @@
                            
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   Image
+                                   {{ __('messages.Image') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="gallery" id="gallery"  class="form-control" type="file">
@@ -32,12 +32,12 @@
 
                             <a href="/gallery"  class="btn btn-primary waves-effect waves-light">
                                 <i class="fas fa-arrow-left"></i>
-                                &nbsp;Back
+                                &nbsp;{{ __('messages.Back') }}
                             </a>
 
                             <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">
                                 <i class="fas fa-save"></i>
-                                &nbsp;Save
+                                &nbsp;{{ __('messages.Save') }}
                             </a>
                         </form>
                     </div>

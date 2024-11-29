@@ -20,13 +20,16 @@ class HomeSliderController extends Controller
         if($request->file('home_slide')) {
             $image = $request->file('home_slide');
             $name_gen = hexdec(uniqid()).'.'. $image->getClientOriginalExtension();
-            //Image::make($image)->resize(636,852)->save('upload/home_slide/'.$name_gen);
             Image::make($image)->save('upload/home_slide/'.$name_gen);
             $save_url = 'upload/home_slide/'.$name_gen;
 
             HomeSlide::findOrFail($slide_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
+                'text' => $request->text,
+                'title_it' => $request->title_it,
+                'short_title_it' => $request->short_title_it,
+                'text_it' => $request->text_it,
                 'video_url' => $request->video_url,
                 'home_slide' => $save_url
             ]);
@@ -40,6 +43,10 @@ class HomeSliderController extends Controller
             HomeSlide::findOrFail($slide_id)->update([
                 'title' => $request->title,
                 'short_title' => $request->short_title,
+                'text' => $request->text,
+                'title_it' => $request->title_it,
+                'short_title_it' => $request->short_title_it,
+                'text_it' => $request->text_it,
                 'video_url' => $request->video_url
             ]);
 

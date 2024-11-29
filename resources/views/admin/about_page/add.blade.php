@@ -18,7 +18,7 @@
                             
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Gallery (multi select)
+                                    Gallery ({{ __('messages.multiselect') }})
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="gallery[]" id="gallery"  class="form-control" type="file" multiple="">
@@ -27,9 +27,9 @@
 
                             <hr />
                             
-                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">            
+                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">
                                 <i class="fas fa-save"></i>
-                                &nbsp;Save
+                                &nbsp;{{ __('messages.Save') }}
                             </a>
                         </form>
 

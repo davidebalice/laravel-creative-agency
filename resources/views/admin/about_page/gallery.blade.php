@@ -29,9 +29,8 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Id</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 564px;" aria-label="Position: activate to sort column ascending">Image</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 564px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Image') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">{{ __('messages.Action') }}</th>
                                         </thead>
 
                                         <tbody>
@@ -39,7 +38,7 @@
                                             $i=1;
                                             $class_row="even";
                                         @endphp
-                                        @foreach ($gallery as $image) 
+                                        @foreach ($gallery as $image)
                                             @php
                                                 $i++
                                             @endphp
@@ -53,14 +52,13 @@
                                                 @endphp
                                             @endif
                                             <tr class="{{ $class_row }}">
-                                                <td class="sorting_1 dtr-control">{{ $image->id }}</td>
                                                 <td><img src="{{ asset($image->gallery) }}" style="width:150px;height:auto !important;border:1px solid #ccc"></td>
                                                 <td>
                                                     <a href="{{ route('edit.gallery',$image->id) }}" class="btn btn-info sm" title="Edit data">
-                                                        <i class="fas fa-edit"></i> Edit
+                                                        <i class="fas fa-edit"></i> {{ __('messages.Edit') }}
                                                     </a>
                                                     <a href="{{ route('delete.gallery',$image->id) }}" id="delete" class="btn btn-danger sm" title="Delete data">
-                                                        <i class="fas fa-trash"></i> Delete
+                                                        <i class="fas fa-trash"></i> {{ __('messages.Delete') }}
                                                     </a>
                                                 </td>
                                             </tr>
@@ -80,15 +78,12 @@
                                     
                                 </div>
                             </div>
-                        
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div> 
-    </div> 
+        </div>
+    </div>
 </div>
-
 
 @endsection

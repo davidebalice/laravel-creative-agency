@@ -10,7 +10,7 @@
         color: #b70000 !important;
         font-weight: 700px;
         padding:3px;
-    } 
+    }
     #datepicker2{
         width:20%;
         min-width:200px;
@@ -19,7 +19,6 @@
 
 <div class="page-content">
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-12">
                 <div class="card">

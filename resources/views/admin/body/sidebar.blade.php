@@ -2,7 +2,7 @@
     <div data-simplebar class="h-100">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu" style="display:none">
-                <li class="menu-title">Menu</li>
+                <li class="menu-title">Menù</li>
 
                 <li>
                     <a href="/dashboard" class="waves-effect">
@@ -14,10 +14,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-layout-3-line"></i>
-                        <span>Home slide</span>
+                        <span>Home</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('home.slide') }}">Options</a></li>
+                        <li><a href="{{ route ('home.slide') }}">{{ __('messages.Options') }}</a></li>
                     </ul>
                 </li>
                
@@ -37,7 +37,7 @@
                         <span>{{ __('messages.About') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('about.page') }}">Options</a></li>
+                        <li><a href="{{ route ('about.page') }}">{{ __('messages.Options') }}</a></li>
                         <li><a href="{{ route ('gallery') }}">Gallery</a></li>
                         <li><a href="{{ route ('add.gallery') }}">Upload</a></li>
                     </ul>
@@ -49,8 +49,8 @@
                         <span>Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('admin.portfolio') }}">Portfolio</a></li>       
-                        <li><a href="{{ route ('portfolio.add') }}">Add work</a></li>
+                        <li><a href="{{ route ('admin.portfolio') }}">Portfolio</a></li>
+                        <li><a href="{{ route ('portfolio.add') }}">{{ __('messages.Addwork') }}</a></li>
                     </ul>
                 </li>
                 
@@ -60,8 +60,8 @@
                         <span>{{ __('messages.Services') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route ('admin.services') }}">{{ __('messages.Services') }}</a></li>    
-                        <li><a href="{{ route ('services.add') }}">Add service</a></li>
+                        <li><a href="{{ route ('admin.services') }}">{{ __('messages.Services') }}</a></li>
+                        <li><a href="{{ route ('services.add') }}">{{ __('messages.Addservice') }}</a></li>
                     </ul>
                 </li>
                 
@@ -72,7 +72,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.blog.category') }}">{{ __('messages.Category') }}</a></li>
-                        <li><a href="{{ route('blog.category.add') }}">Add category</a></li>
+                        <li><a href="{{ route('blog.category.add') }}">{{ __('messages.Addcategory') }}</a></li>
                     </ul>
                 </li>
 
@@ -83,7 +83,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.blog') }}">Blog</a></li>
-                        <li><a href="{{ route('blog.add') }}">Add article</a></li>
+                        <li><a href="{{ route('blog.add') }}">{{ __('messages.Addarticle') }}</a></li>
                     </ul>
                 </li>
 
@@ -100,10 +100,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-contacts-book-2-line"></i>
-                        <span>Contact</span>
+                        <span>{{ __('messages.Contact') }}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('contact.message') }}">Message</a></li>
+                        <li><a href="{{ route('contact.message') }}">{{ __('messages.Messages') }}</a></li>
                     </ul>
                 </li>
         

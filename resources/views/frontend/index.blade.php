@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Demo creative agency site with Portfolio and Blog - developed in Laravel
+{{ __('messages.title1') }}
 @endsection
 
 @include('frontend.home.slide')

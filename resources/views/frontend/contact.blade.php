@@ -16,11 +16,11 @@ Contact
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8 col-md-10">
                 <div class="breadcrumb__wrap__content">
-                    <h2 class="title">Contact us</h2>
+                    <h2 class="title">{{ __('messages.Contact') }}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('messages.Contact') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -31,8 +31,7 @@ Contact
 
 
 <div id="contact-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96811.54759587669!2d-74.01263924803828!3d40.6880494567041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bae694479a3%3A0xb9949385da52e69e!2sBarclays%20Center!5e0!3m2!1sen!2sbd!4v1636195194646!5m2!1sen!2sbd"
-        allowfullscreen loading="lazy"></iframe>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44773.57326360137!2d9.136533024770692!3d45.462786644763824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c1493f1275e7%3A0x3cffcd13c6740e8d!2sMilano%20MI!5e0!3m2!1sit!2sit!4v1732893995540!5m2!1sit!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <div class="contact-area">
@@ -41,29 +40,29 @@ Contact
             @csrf
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" name="name" placeholder="Enter your name*" value="{{old('name')}}">
+                    <input type="text" name="name" placeholder="{{ __('messages.Enteryourname') }}*" value="{{old('name')}}">
                     @error('name')
                         <span class="text-danger"> {{ $message }} </span>
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <input type="email" name="email" placeholder="Enter your mail*"  value="{{old('email')}}">
+                    <input type="email" name="email" placeholder="{{ __('messages.Enteryourmail') }}*"  value="{{old('email')}}">
                     @error('email')
                         <span class="text-danger"> {{ $message }} </span>
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="tel" placeholder="Enter your tel"  value="{{old('tel')}}">
+                    <input type="text" name="tel" placeholder="{{ __('messages.Enteryourtel') }}"  value="{{old('tel')}}">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="subject" placeholder="Your subject*"  value="{{old('subject')}}">
+                    <input type="text" name="subject" placeholder="{{ __('messages.Subject') }}*"  value="{{old('subject')}}">
                 </div>
             </div>
-            <textarea name="message" id="message" placeholder="Enter your massage*">{{old('message')}}</textarea>
+            <textarea name="message" id="message" placeholder="{{ __('messages.Enteryourmassage') }}*">{{old('message')}}</textarea>
             @error('message')
                 <span class="text-danger"> {{ $message }} </span>
             @enderror
-            <button type="submit" class="btn">send massage</button>
+            <button type="submit" class="btn">{{ __('messages.Send') }}</button>
         </form>
     </div>
 </div>
@@ -89,7 +88,7 @@ Contact
                         <img src="assets/img/icons/contact_icon02.png" alt="">
                     </div>
                     <div class="contact__info__content">
-                        <h4 class="title">Contact</h4>
+                        <h4 class="title">{{ __('messages.Contact') }}</h4>
                         <span>{{ $footer->number }}</span>
                         <span><a href="mailto:{{ $footer->email }}" class="mail">{{ $footer->email }}</a></span>
                     </div>

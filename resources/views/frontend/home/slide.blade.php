@@ -16,12 +16,30 @@
             <div class="col-xl-5 col-lg-6">
                 <div class="banner__content">
                     <h2 class="title wow fadeInUp mobileWhite" data-wow-delay=".2s">
-                        {{ $homeslide->title }}
+                        @if (app()->getLocale() == 'it')
+                            {{ $homeslide->title_it }}
+                        @else
+                            {{ $homeslide->title }}
+                        @endif
                     </h2>
                     <h4 class="wow title fadeInUp mobileWhite slideText2" data-wow-delay=".4s">
-                        {{ $homeslide->short_title }}
+                        @if (app()->getLocale() == 'it')
+                            {{ $homeslide->short_title_it }}
+                        @else
+                            {{ $homeslide->short_title }}
+                        @endif
                     </h4>
-                    <img src="{{ asset('/frontend/assets/img/images/laravel.png')}}" class="wow fadeInUp laravelHome" data-wow-delay=".6s">
+                    <h6 class="wow title fadeInUp mobileWhite slideText3" data-wow-delay=".6s">
+                        @if (app()->getLocale() == 'it')
+                            {{ $homeslide->text_it }}
+                        @else
+                            {{ $homeslide->text }}
+                        @endif
+                    </h6>
+                    <div class="slideHomeContainer">
+                        <img src="{{ asset('/frontend/assets/img/images/laravel.png')}}" class="wow fadeInUp laravelHome" data-wow-delay=".8s">
+                        <a href="/login" class="wow fadeInUp btn mobileWhite" data-wow-delay=".9s">{{ __('messages.GoToCms') }}</a>
+                    </div>
                 </div>
             </div>
         </div>

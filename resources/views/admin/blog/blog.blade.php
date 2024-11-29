@@ -22,7 +22,7 @@
                     <button class="btn btn-success addButton">
                         <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Add article
+                            &nbsp;&nbsp;{{ __('messages.Addarticle') }}
                         </div>
                     </button>
                 </a>
@@ -47,15 +47,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                           
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th style="width: 54px;" >Publish</th>
+                                            <th style="width: 54px;" >{{ __('messages.Publish') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Image') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Date') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Category') }}</th>
@@ -69,7 +67,7 @@
                                             $i=1;
                                             $class_row="even";
                                         @endphp
-                                        @foreach ($blogs as $item) 
+                                        @foreach ($blogs as $item)
                                             @php
                                                 $i++
                                             @endphp
@@ -101,10 +99,10 @@
                                                 <td>{{ $item->tags }}</td>
                                                 <td>
                                                     <a href="{{ route('blog.edit',$item->id) }}" class="btn btn-info sm button_edit" title="Edit">
-                                                        <i class="fas fa-edit"></i> Edit
+                                                        <i class="fas fa-edit"></i> {{ __('messages.Edit') }}
                                                     </a>
                                                     <a href="{{ route('blog.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
-                                                        <i class="fas fa-trash"></i> Delete
+                                                        <i class="fas fa-trash"></i> {{ __('messages.Delete') }}
                                                     </a>
                                                 </td>
                                             </tr>

@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section__title">
-                        <h2 class="title">Any questions? Feel free <br> to contact</h2>
+                        <h2 class="title">{{ __('messages.Contactus') }}</h2>
                     </div>
                     <div class="homeContact__content">
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                         <h2 class="mail"><a href="mailto:info@companyname.com" style="font-size:16px">info@companyname.com</a></h2>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                             <input type="email" placeholder="Enter mail*">
                             <input type="number" placeholder="Enter number*">
                             <textarea name="message" placeholder="Enter Massage*"></textarea>
-                            <button type="submit">Send Message</button>
+                            <button type="submit">{{ __('messages.Send') }}</button>
                         </form>
                     </div>
                 </div>

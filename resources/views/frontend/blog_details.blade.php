@@ -14,7 +14,7 @@ Blog
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Details</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('messages.Details') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -43,7 +43,7 @@ Blog
                             <div class="blog__post__avatar">
                                 <span class="post__by">By: <a href="#">{{ $blogs->authors->name }} {{ $blogs->authors->surname }}</a></span>
                             </div>
-                        </ul> 
+                        </ul>
                         <h2 class="title">{{$blogs->title}}</h2>
                         {!! $blogs->description !!}
                         
@@ -65,7 +65,7 @@ Blog
                             </li>
                         </ul>
                         <ul class="blog__details__social">
-                            <li class="title">Share :</li>
+                            <li class="title">{{ __('messages.Share') }}:</li>
                             <li class="social-icons">
                                 <a href="#"><i class="fab fa-facebook" style="font-size:22px"></i></a>
                                 <a href="#"><i class="fab fa-twitter-square" style="font-size:22px"></i></a>

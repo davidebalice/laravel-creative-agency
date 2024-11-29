@@ -42,7 +42,6 @@
             <div class="container-fluid p-0">
                 <div class="card">
                     <div class="card-body">
-
                         <div class="text-center mt-4 mb-4">
                             <div class="mb-3">
                                 <a href="/" class="auth-logo">
@@ -51,7 +50,7 @@
                             </div>
                         </div>
     
-                        <h4 class="text-muted text-center font-size-18"><b>Sign In</b></h4>
+                        <h4 class="text-muted text-center font-size-18"><b>Login</b></h4>
 
                         @if (env('DEMO_MODE'))
                             <div class="loginData">

@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-4">
-                <div class="footer__widget"> 
+                <div class="footer__widget">
                     <div class="fw-title bold">
                         {{ $footer->name }}
-                    </div>                
+                    </div>
                     <div class="footer__widget__address">
                         <p>{{ $footer->address }}</p>
                         <p>{{ $footer->city }}</p>
@@ -35,7 +35,7 @@
             <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="footer__widget">
                     <div class="fw-title">
-                        <h5 class="sub-title">Project on github</h5>
+                        <h5 class="sub-title">{{ __('messages.Projectongithub') }}</h5>
                     </div>
                     <div class="footer__widget__social">
                         <ul class="footer__social__list">

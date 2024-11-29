@@ -18,7 +18,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="website-tab" data-bs-toggle="tab" data-bs-target="#website" type="button"
-                            role="tab" aria-controls="website" aria-selected="false">website</button>
+                            role="tab" aria-controls="website" aria-selected="false">Website</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="apps-tab" data-bs-toggle="tab" data-bs-target="#apps" type="button" role="tab" aria-controls="apps" aria-selected="false">mobile apps</button>
@@ -59,7 +59,7 @@
                                     <h4 class="title">
                                         <a href="portfolio-details.html">{{$item->title}}</a>
                                     </h4>
-                                    <a href="{{ route('portfolio.details',$item->id) }}" class="link">Detail</a>
+                                    <a href="{{ route('portfolio.details',$item->id) }}" class="link">{{ __('messages.Details') }}</a>
                                 </div>
                             </div>
                             @endforeach

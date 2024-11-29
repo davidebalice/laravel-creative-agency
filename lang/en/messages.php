@@ -2,6 +2,14 @@
 
 return [
 
+    'title1' => 'Demo creative agency site with Portfolio and Blog - developed in Laravel',
+    'dash1' => 'Demo of Website and Cms developed in Laravel',
+    'dash2' => 'with portfolio, services, blog and homepage management',
+    'dash3' => 'View project on Github',
+    'dash4' => 'Important',
+    'dash5' => 'This CMS is in DEMO MODE, the crud operations area not allowed',
+    'dash6' => 'Latest work on Portfolio',
+    'dash7' => 'Latest article in Blog',
     'Work' => 'Lavoro',
     'Pagebanner' => 'Page banner',
     'About' => 'About',
@@ -21,7 +29,59 @@ return [
     'Back' => 'Back',
     'Insert' => 'Insert',
     'Order' => 'Order',
-
-
-    //{{ __('messages.Category') }}
+    'GoToCms' => 'Go to cms',
+    'Options' => 'Options',
+    'Addwork' => 'Add work',
+    'Work' => 'Work',
+    'Publish' => 'Publish',
+    'Noresult' => 'No result',
+    'Icon' => 'Icon',
+    'RecentBlog' => 'Recent articles',
+    'Shorttitle' => 'Short title',
+    'Shortdescription' => 'Short description',
+    'Longdescription' => 'Description',
+    'Description' => 'Description',
+    'multiselect' => 'multi select',
+    'Changepassword' => 'Change password',
+    'Confirmpassword' => 'Confirm password',
+    'Newpassword' => 'New password',
+    'Oldpassword' => 'Old password',
+    'Profile' => 'Profile',
+    'Surname' => 'Surname',
+    'Name' => 'Name',
+    'Addarticle' => 'Add article',
+    'Author' => 'Author',
+    'Editarticle' => 'Edit article',
+    'Addcategory' => 'Add category',
+    'Addservice' => 'Add service',
+    'Contact' => 'Contact',
+    'Messages' => 'Messages',
+    'Subject' => 'Subject',
+    'Phone' => 'Phone',
+    'Companyname' => 'Company name',
+    'Address' => 'Address',
+    'City' => 'City',
+    'Text' => 'Text',
+    'Addportfolio' => 'Add portfolio',
+    'Client' => 'Client',
+    'Updatework' => 'Update work',
+    'Updateservice' => 'Update service',
+    'Details' => 'Details',
+    'Share' => 'Share',
+    'Projectongithub' => 'Project on Github',
+    'Readmore' => 'Read more',
+    'Contactus' => 'Contact us',
+    'Send' => 'Send',
+    'PopularTags' => 'Popular tags',
+    'Enteryourname' => 'Enter your name',
+    'Enteryourtel' => 'Enter your tel',
+    'Enteryourmail' => 'Enter your mail',
+    'Enteryourmassage' => 'Enter your massage',
+    
+    
+    
+    
+    
+    
+    // {{ __('messages.PopularTags') }}
 ];

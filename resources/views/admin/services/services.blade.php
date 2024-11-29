@@ -22,7 +22,7 @@
                     <button class="btn btn-success addButton">
                         <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Add service
+                            &nbsp;&nbsp;{{ __('messages.Addservice') }}
                         </div>
                     </button>
                 </a>
@@ -47,19 +47,17 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                           
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th style="width: 54px;" >Publish</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-label="Position: activate to sort column ascending">Icon</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 500px;" aria-label="Position: activate to sort column ascending">Service</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
+                                            <th style="width: 54px;" >{{ __('messages.Publish') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 74px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Icon') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Image') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 500px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Service') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">{{ __('messages.Action') }}</th>
                                         </thead>
 
                                         <tbody>
@@ -73,7 +71,7 @@
                                         @if ($totRecords==0)
                                             <tr>
                                                 <td colspan="5">
-                                                    <h5 class="py-5 pl-4">No result</h5>
+                                                    <h5 class="py-5 pl-4">{{ __('messages.Noresult') }}</h5>
                                                 </td>
                                             </tr>
                                         @endif
@@ -110,10 +108,10 @@
                                                 <td>{{ $item->title }}</td>
                                                 <td>
                                                     <a href="{{ route('services.edit',$item->id) }}" class="btn btn-info sm button_edit" title="Edit">
-                                                        <i class="fas fa-edit"></i> Edit
+                                                        <i class="fas fa-edit"></i> {{ __('messages.Edit') }}
                                                     </a>
                                                     <a href="{{ route('services.delete',$item->id) }}" id="delete" class="btn btn-danger sm" title="Delete">
-                                                        <i class="fas fa-trash"></i> Delete
+                                                        <i class="fas fa-trash"></i> {{ __('messages.Delete') }}
                                                     </a>
                                                     <hr/>
 

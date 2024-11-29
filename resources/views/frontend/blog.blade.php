@@ -40,7 +40,7 @@ Blog
         <div class="row">
             <div class="col-lg-8">
                 @if ($blogs->count() === 0)
-                    <p>No results</p>
+                    <p>{{ __('messages.Noresult') }}</p>
                 @else
                     @foreach ($blogs as $item)
                         
@@ -49,7 +49,7 @@ Blog
                                 @if (file_exists($item->image_home))
                                     <img src="{{ asset($item->image_home)}}" alt="">
                                 @else
-                                    <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">                         
+                                    <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">
                                 @endif
                             </div>
                             <div class="standard__blog__content">
@@ -60,14 +60,14 @@ Blog
                                     <div class="blog__post__avatar">
                                         <span class="post__by">By: <a href="#">{{ $item->authors->name }} {{ $item->authors->surname }}</a></span>
                                     </div>
-                                </ul>    
+                                </ul>
 
                                 <h2 class="title"><a href="{{ route('blog.details',$item->id) }}">{{ $item->title }}</a></h2>
                                 
                                 {!! Str::limit($item->description,250) !!}
 
                                 <p style="text-align: right;margin-top:10px">
-                                    <a href="{{ route('blog.details',$item->id) }}" class="btn mobileWhite">Details</a>
+                                    <a href="{{ route('blog.details',$item->id) }}" class="btn mobileWhite">{{ __('messages.Details') }}</a>
                                 </p>
                             </div>
                         </div>

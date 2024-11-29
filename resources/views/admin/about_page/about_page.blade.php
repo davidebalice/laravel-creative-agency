@@ -9,9 +9,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title mb-5">{{ __('messages.About') }}</h4>
-                        
                         <form id="frm_about" method="post" action="{{ route('update.about')}}" enctype="multipart/form-data">
                             @csrf
 
@@ -19,7 +17,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Title
+                                    {{ __('messages.Title') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="title" class="form-control" type="text" id="example-text-input" value="{{ $aboutpage->title }}">
@@ -28,7 +26,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Short title
+                                    {{ __('messages.Shorttitle') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="short_title" class="form-control" type="text" id="example-text-input" value="{{ $aboutpage->short_title }}">
@@ -37,7 +35,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   Short description
+                                   {{ __('messages.Shortdescription') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <textarea name="short_description" class="form-control" rows="5" id="elm1">{{ $aboutpage->short_description }}</textarea>
@@ -46,7 +44,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   Long description
+                                   {{ __('messages.Description') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <textarea name="long_description" class="form-control" rows="5" id="elm2">{{ $aboutpage->long_description }}</textarea>
@@ -79,7 +77,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   About image
+                                   {{ __('messages.Image') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="about_image" id="about_image"  class="form-control" type="file">
@@ -91,14 +89,14 @@
 
                             <hr />
 
-                            <a href="/admin/profile"  class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-arrow-left"></i>               
-                                &nbsp;Back
+                            <a href="/admin/profile"  class="btn btn-primary waves-effect waves-light">
+                                <i class="fas fa-arrow-left"></i>
+                                &nbsp;{{ __('messages.Back') }}
                             </a>
 
-                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-save"></i>               
-                                &nbsp;Save
+                            <a href="#" onclick="$('#frm_about').submit()" class="btn btn-primary waves-effect waves-light">
+                                <i class="fas fa-save"></i>
+                                &nbsp;{{ __('messages.Save') }}
                             </a>
                         </form>
 

@@ -27,9 +27,11 @@
                                 <div class="text-center">
                                     <img src="{{ asset('backend/assets/images/laravel.png') }}" alt="Laravel" class="laravelLogo">
                                 </div>
-                                <h5 class="mt-4 text-white text-center">Demo of Website and Cms developed in Laravel 
+                                <h5 class="mt-4 text-white text-center">
+                                    {{ __('messages.dash1') }}
                                     <br />
-                                    with portfolio, services, blog and homepage management.</h5>
+                                    {{ __('messages.dash2') }}
+                                </h5>
                             </div>
                         </div>
                     </div>
@@ -41,7 +43,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <h5 class="mb-0">View project on Github</h5>
+                                <h5 class="mb-0">{{ __('messages.dash3') }}</h5>
                                 <div class="text-center">
                                     <img src="{{ asset('backend/assets/images/github.png') }}" alt="Github" class="githubLogo">
                                 </div>
@@ -62,10 +64,10 @@
                                 <div class="text-center">
                                     <img src="{{ asset('logo/logo.png') }}" alt="db" class="dbLogo">
                                 </div>
-                                <h3 class="mb-2 dashText1">Important</h3>
-                                <h4 class="mb-2 dashText2">This CMS is in DEMO MODE, the crud operations area not allowed.</h4>
+                                <h3 class="mb-2 dashText1">{{ __('messages.dash4') }}</h3>
+                                <h4 class="mb-2 dashText2">{{ __('messages.dash5') }}</h4>
                             </div>
-                        </div>                                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,14 +81,14 @@
                         <div class="row dashBox">
                             <h4 class="card-title mb-4 dashTitle">
                                 <p class="dashTitle2">
-                                    Latest work on Portfolio
+                                    {{ __('messages.dash6') }}
                                 </p>
                             </h4>
                             <a href="{{ route('portfolio.add') }}" class="dashTitle" >
                                 <button class="btn btn-success addButton2">
                                     <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                                     <div>
-                                        &nbsp;&nbsp;Add work
+                                        &nbsp;&nbsp;{{ __('messages.Addwork') }}
                                     </div>
                                 </button>
                             </a>
@@ -97,7 +99,7 @@
                                 <thead>
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 164px;" aria-label="Position: activate to sort column ascending">Image</th>
-                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Portfolio name</th>
+                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Work</th>
                                     <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 320px;" aria-label="Position: activate to sort column ascending">Title</th>
                                 </thead>
 
@@ -112,12 +114,12 @@
                                 @if ($totRecords==0)
                                     <tr>
                                         <td colspan="5">
-                                            <h5 class="py-5 pl-4">No result</h5>
+                                            <h5 class="py-5 pl-4">{{ __('messages.Noresult') }}</h5>
                                         </td>
                                     </tr>
-                                @endif    
+                                @endif
 
-                                @foreach ($portfolio as $item) 
+                                @foreach ($portfolio as $item)
                                     @php
                                         $i++
                                     @endphp
@@ -150,14 +152,14 @@
                         <div class="row dashBox">
                             <h4 class="card-title mb-4 dashTitle">
                                 <p class="dashTitle2">
-                                    Latest article in Blog
+                                    {{ __('messages.dash7') }}
                                 </p>
                             </h4>
                             <a href="{{ route('blog.add') }}" class="dashTitle" >
                                 <button class="btn btn-success addButton2">
                                     <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                                     <div>
-                                        &nbsp;&nbsp;Add article
+                                        &nbsp;&nbsp;{{ __('messages.Addarticle') }}
                                     </div>
                                 </button>
                             </a>

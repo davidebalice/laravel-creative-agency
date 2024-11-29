@@ -39,7 +39,7 @@ Portfolio
                                 @if (file_exists($item->image_home))
                                     <img src="{{ asset($item->image_home)}}" alt="">
                                 @else
-                                    <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">                        
+                                    <img src="{{ asset('upload/no_image_blog.jpg')}}" alt="">
                                 @endif
                             </a>
                         </div>
@@ -54,7 +54,7 @@ Portfolio
                             </h2>
                             {!! Str::limit($item->description,150) !!}
                             <p>
-                                <a href="{{ route('portfolio.details',$item->id) }}" class="btn mobileWhite">Details</a>
+                                <a href="{{ route('portfolio.details',$item->id) }}" class="btn mobileWhite">{{ __('messages.Details') }}</a>
                             </p>
                         </div>
                     </div>

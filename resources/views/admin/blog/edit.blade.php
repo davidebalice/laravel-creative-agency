@@ -26,7 +26,7 @@
                     <button class="btn btn-success addButton">
                         <i class="mdi mdi-keyboard-backspace" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Back
+                            &nbsp;&nbsp;{{ __('messages.Back') }}
                         </div>
                     </button>
                 </a>
@@ -38,9 +38,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title mb-5">Edit article</h4>
-                        
-                      
+                        <h4 class="card-title mb-5">{{ __('messages.Editarticle') }}</h4>
                         
                         <form id="frm_blog" method="post" action="{{ route('blog.update')}}" enctype="multipart/form-data">
                             @csrf
@@ -48,7 +46,7 @@
                             <input type="hidden" name="id" value="{{ $blogs->id }}">
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Date</label>
+                                <label class="col-sm-2 col-form-label">{{ __('messages.Date') }}</label>
                                 <div class="col-sm-10">
                                 <div class="input-group" id="datepicker2">
                                     <input type="text" name="created_at" class="form-control" value="{{ $blogs->created_at }}" placeholder="dd M, yyyy" data-date-format="dd M, yyyy" data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
@@ -57,11 +55,9 @@
                                         <div class="datepicker " style="top: 39.6406px; left: 0px; z-index: 10; display: block;">
                                             <div class="datepicker-days" style="">
                                         
-                                         
-                                        
                                             </div>
                                         </div>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

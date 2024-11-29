@@ -22,7 +22,7 @@
                     <button class="btn btn-success addButton">
                         <i class="ri-add-circle-fill" style="font-size:22px"></i> 
                         <div>
-                            &nbsp;&nbsp;Add category
+                            &nbsp;&nbsp;{{ __('messages.Addcategory') }}
                         </div>
                     </button>
                 </a>
@@ -41,7 +41,7 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th style="width: 54px;" >Publish</th>
+                                            <th style="width: 54px;" >{{ __('messages.Publish') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 464px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Category') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 120px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Order') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">{{ __('messages.Action') }}</th>
@@ -58,12 +58,12 @@
                                         @if ($totRecords==0)
                                         <tr>
                                             <td colspan="5">
-                                                <h5 class="py-5 pl-4">No result</h5>
+                                                <h5 class="py-5 pl-4">{{ __('messages.Noresult') }}</h5>
                                             </td>
                                         </tr>
-                                        @endif    
+                                        @endif
 
-                                        @foreach ($blogcategory as $item) 
+                                        @foreach ($blogcategory as $item)
                                             @php
                                                 $i++
                                             @endphp
@@ -101,37 +101,36 @@
 
                                                     @if ($item->position<=1)
                                                     <a href="#" class="btn btn-success btn-sm button_disable">
-                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span>
                                                     </a>
                                                     @else
                                                     <a href="{{url('admin/blogcategory/sort/up/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
-                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span> 
+                                                      <span class="mdi mdi-arrow-up icon_mdi_arrow"></span>
                                                     </a>
                                                     @endif
                           
                                                     @if ($item->position==$totRecords)
                                                     <a href="#" class="btn btn-success btn-sm button_disable">
-                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span>
                                                     </a>
                                                     @else
                                                     <a href="{{url('admin/blogcategory/sort/down/'.$item->id)}}" class="btn btn-success btn-sm button_edit">
-                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span> 
+                                                      <span class="mdi mdi-arrow-down icon_mdi_arrow"></span>
                                                     </a>
                                                     @endif
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
-                                    </table>                                   
+                                    </table>
                                     {{ $blogcategory->links() }}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
-        </div> 
-
+            </div>
+        </div>
     </div>
 </div>
 

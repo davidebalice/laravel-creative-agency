@@ -1,13 +1,13 @@
 <div class="widget">
-    <h4 class="widget-title">Recent Blog</h4>
+    <h4 class="widget-title">{{ __('messages.RecentBlog') }}</h4>
     <ul class="rc__post">
         @if ($recent_blogs->count() === 0)
-            <p>No results</p>
+            <p>{{ __('messages.Noresult') }}</p>
         @else
             @foreach ($recent_blogs as $item)
                 <li class="rc__post__item">
                     <div class="rc__post__thumb">
-                        <a href="{{ route('blog.details',$item->id) }}"> 
+                        <a href="{{ route('blog.details',$item->id) }}">
                             @if (file_exists($item->image_home))
                                 <img src="{{ asset($item->image)}}" alt="">
                             @else

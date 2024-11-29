@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Messages</h4>
+                    <h4 class="mb-sm-0">{{ __('messages.Messages') }}</h4>
                 </div>
             </div>
         </div>
@@ -21,20 +21,18 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
                         <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                           
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 90px;" aria-label="Position: activate to sort column ascending">Date</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">Name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 90px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Date') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Name') }}</th>
                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">Email</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">Tel</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">Subject</th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">Action</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Phone') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 154px;" aria-label="Position: activate to sort column ascending">{{ __('messages.Subject') }}</th>
+                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 125px;" aria-label="Office: activate to sort column ascending">{{ __('messages.Action') }}</th>
                                         </thead>
 
                                         <tbody>
@@ -42,7 +40,7 @@
                                             $i=1;
                                             $class_row="even";
                                         @endphp
-                                        @foreach ($messages as $message) 
+                                        @foreach ($messages as $message)
                                             @php
                                                 $i++
                                             @endphp
@@ -63,7 +61,7 @@
                                                 <td class="sorting_1 dtr-control">{{ $message->subject }}</td>
                                                 <td>
                                                     <a href="{{ route('delete.message',$message->id) }}" id="delete" class="btn btn-danger sm" title="Delete data">
-                                                        <i class="fas fa-trash"></i> Delete
+                                                        <i class="fas fa-trash"></i> {{ __('messages.Delete') }}
                                                     </a>
                                                 </td>
                                             </tr>
@@ -83,15 +81,12 @@
                                     
                                 </div>
                             </div>
-                        
                         </div>
-
                     </div>
                 </div>
-            </div> 
-        </div> 
-
-    </div> 
+            </div>
+        </div>
+    </div>
 </div>
 
 

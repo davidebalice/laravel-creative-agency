@@ -32,11 +32,11 @@
                             {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
                         </span>
                         <h3 class="title"><a href="{{ route('blog.details',$item->id) }}">{{ $item->title }}</a></h3>
-                        <a href="{{ route('blog.details',$item->id) }}" class="read__more">Read mORe</a>
+                        <a href="{{ route('blog.details',$item->id) }}" class="read__more">{{ __('messages.Readmore') }}</a>
                     </div>
                 </div>
             </div>
-           @endforeach   
-        </div>     
+           @endforeach
+        </div>
     </div>
 </section>

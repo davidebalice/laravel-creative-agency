@@ -4,14 +4,11 @@
 
 <div class="page-content">
     <div class="container-fluid">
-
-    
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <h4 class="card-title">Change password</h4>
+                        <h4 class="card-title">{{ __('messages.Changepassword') }}</h4>
                         
                         @if(count($errors))
                             @foreach ($errors->all() as $error)
@@ -23,7 +20,7 @@
                             @csrf
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                    Old password
+                                    {{ __('messages.Oldpassword') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="oldpassword" class="form-control" type="password" id="oldpassword">
@@ -32,7 +29,7 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   New password
+                                   {{ __('messages.Newpassword') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="newpassword" class="form-control" type="password" id="newpassword">
@@ -41,20 +38,18 @@
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">
-                                   Confirm password
+                                   {{ __('messages.Confirmpassword') }}
                                 </label>
                                 <div class="col-sm-10">
                                     <input name="confirm_password" class="form-control" type="password" id="confirm_password">
                                 </div>
                             </div>
 
-                           
-
                             <hr />
 
-                            <a href="#" onclick="$('#frm_profile').submit()" class="btn btn-primary waves-effect waves-light">            
-                                <i class="fas fa-save"></i>               
-                                &nbsp;Save
+                            <a href="#" onclick="$('#frm_profile').submit()" class="btn btn-primary waves-effect waves-light">
+                                <i class="fas fa-save"></i>
+                                &nbsp;{{ __('messages.Save') }}
                             </a>
                         </form>
                     </div>

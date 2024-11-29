@@ -4,8 +4,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-xl-5 col-lg-6 col-md-8">
                     <div class="section__title">
-                        <span class="sub-title">{{ __('messages.Services') }}</span>
-                        <h2 class="title">Creates digital experiences</h2>
+                        <h2 class="title">{{ __('messages.Services') }}</h2>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6 col-md-4">
